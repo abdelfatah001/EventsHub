@@ -1,0 +1,837 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\EventsHub\\EventsHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\eventoccurenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\eventoccurenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\services\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\services\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\tickettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\tickettyperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\orderitemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\orderitemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\ticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\ticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\eventoccurencerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\eventoccurencerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\repositories\\eventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\eventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\iorderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\ieventoccurenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ieventoccurenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\ieventoccurencerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ieventoccurencerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\ieventcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ieventcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\ipaymentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ipaymentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\iticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\iorderitemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iorderitemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\iorderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iorderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\ieventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ieventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\eventconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\eventconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\refreshtokenconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\refreshtokenconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\dbcontexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dbcontexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\eventcategoryconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\eventcategoryconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\eventoccurenceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\eventoccurenceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\orderconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\orderconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\orderitemconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\orderitemconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\paymentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\paymentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\ticketconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\ticketconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|d:\\eventshub\\eventshub\\infrastructure\\configurations\\tickettypeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{734835D7-4674-4047-9282-5243ED4F855E}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\configurations\\tickettypeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\ticketstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\ticketstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\eventstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\eventstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\entities\\eventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\eventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\obj\\debug\\net9.0\\core.globalusings.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\obj\\debug\\net9.0\\core.globalusings.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\OrderService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:35.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\UserService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\UserService.cs",
+              "RelativeToolTip": "Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:35.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\PaymentService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\PaymentService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\PaymentService.cs",
+              "RelativeToolTip": "Application\\Services\\PaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:09.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\CategoryService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\CategoryService.cs",
+              "RelativeToolTip": "Application\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:09.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:52.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventOccurenceService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\EventOccurenceService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\EventOccurenceService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\EventOccurenceService.cs",
+              "RelativeToolTip": "Application\\Services\\EventOccurenceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:08.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\EventService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\EventService.cs",
+              "RelativeToolTip": "Application\\Services\\EventService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:08.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderItemService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Services\\OrderItemService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderItemService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Services\\OrderItemService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T11:08:08.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\UserRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\UserRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\UserRepo.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:57.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TicketTypeRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\TicketTypeRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TicketTypeRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\TicketTypeRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\TicketTypeRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:59.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TicketRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\TicketRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TicketRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\TicketRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\TicketRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:58.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderItemRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderItemRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrderItemRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderItemRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\OrderItemRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:58.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrderRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\OrderRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:58.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IUserRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IUserRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IUserRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:49.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:58:40.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EventOccurenceRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventOccurenceRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\EventOccurenceRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventOccurenceRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\EventOccurenceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:58.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EventRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\EventRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\EventRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:42:58.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IOrderItemService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IOrderItemService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderItemService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IOrderItemService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrderItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:53.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:53.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IPaymentService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IPaymentService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:52.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:52.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IEventOccurenceService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IEventOccurenceService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IEventOccurenceService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IEventOccurenceService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IEventOccurenceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:52.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IEventService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IEventService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IEventService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Interfaces\\IEventService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IEventService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:35:52.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPaymentRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IPaymentRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IPaymentRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IPaymentRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IPaymentRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:50.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IEventCategoryRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventCategoryRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IEventCategoryRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventCategoryRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IEventCategoryRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:50.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IEventOccurenceRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventOccurenceRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IEventOccurenceRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventOccurenceRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IEventOccurenceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:49.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ITicketRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\ITicketRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\ITicketRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\ITicketRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\ITicketRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:50.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IOrderItemRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrderItemRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrderItemRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrderItemRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IOrderItemRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:49.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IOrderRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrderRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrderRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrderRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IOrderRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:49.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IEventRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IEventRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IEventRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T10:18:49.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Domain.csproj",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-09T10:16:46.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "EventConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\EventConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\EventConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:03:48.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "RefreshTokenConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\RefreshTokenConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\RefreshTokenConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\RefreshTokenConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\RefreshTokenConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T16:04:02.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "EventCategoryConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventCategoryConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\EventCategoryConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventCategoryConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\EventCategoryConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:04:55.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\DbContexts\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DbContexts\\AppDbContext.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\DbContexts\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\DbContexts\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T13:54:04.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\RefreshToken.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\RefreshToken.cs",
+              "RelativeToolTip": "Domain\\Entities\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:58:42.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "EventOccurenceConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventOccurenceConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\EventOccurenceConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventOccurenceConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\EventOccurenceConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:04:55.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "OrderConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\OrderConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\OrderConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:03:49.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "EventCategory.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\EventCategory.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\EventCategory.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\EventCategory.cs",
+              "RelativeToolTip": "Domain\\Entities\\EventCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T06:17:19.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "OrderItemConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderItemConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\OrderItemConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderItemConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\OrderItemConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:04:55.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "PaymentConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\PaymentConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\PaymentConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\PaymentConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\PaymentConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:03:49.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TicketConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\TicketConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\TicketConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\TicketConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\TicketConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:03:49.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "TicketTypeConfig.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\TicketTypeConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Configurations\\TicketTypeConfig.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\TicketTypeConfig.cs",
+              "RelativeToolTip": "Infrastructure\\Configurations\\TicketTypeConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T14:04:55.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\UserRole.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\UserRole.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\UserRole.cs",
+              "RelativeToolTip": "Domain\\Enums\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:59:32.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TicketStatus.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\TicketStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\TicketStatus.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\TicketStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\TicketStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:59:32.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\PaymentStatus.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\PaymentStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\PaymentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:59:32.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\OrderStatus.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\OrderStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:59:32.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "EventStatus.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\EventStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\EventStatus.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\EventStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\EventStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T13:59:32.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Core.GlobalUsings.g.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\obj\\Debug\\net9.0\\Core.GlobalUsings.g.cs",
+              "RelativeDocumentMoniker": "Domain\\obj\\Debug\\net9.0\\Core.GlobalUsings.g.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\obj\\Debug\\net9.0\\Core.GlobalUsings.g.cs",
+              "RelativeToolTip": "Domain\\obj\\Debug\\net9.0\\Core.GlobalUsings.g.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T06:22:41.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Program.cs",
+              "RelativeDocumentMoniker": "API\\Program.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Program.cs",
+              "RelativeToolTip": "API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T05:26:23.917Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

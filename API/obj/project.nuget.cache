@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "azukof5JGGY=",
+  "success": true,
+  "projectFilePath": "D:\\EventsHub\\EventsHub\\API\\API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.14\\microsoft.aspnetcore.openapi.9.0.14.nupkg.sha512",
+    "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
