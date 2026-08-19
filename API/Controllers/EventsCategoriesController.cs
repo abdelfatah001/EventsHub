@@ -1,0 +1,67 @@
+﻿
+
+using Application.DTOs.Category.Request;
+using Application.DTOs.Category.Response;
+using Application.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
+
+namespace API.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class EventsCategoriesController : ControllerBase
+    {
+        private readonly ICategoryService _service;
+
+        public EventsCategoriesController(ICategoryService eventCategoryService)
+        {
+            _service = eventCategoryService;
+        }
+
+        // GET: api/EventsCategories
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            var result = await _service.GetAllAsync();
+
+            return Ok(result);
+        }
+
+        // GET: api/EventsCategories/{id}
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<CategoryResponseDto>> GetById(int id)
+        {
+            var result = await _service.GetByIdAsync(id);
+
+            return result is not null ?
+                Ok(result) :
+                NotFound(new { message = $"Category with ID {id} not found." });
+        }
+
+        // POST: api/EventsCategories
+        [HttpPost]
+        public async Task<ActionResult<CategoryResponseDto>> Add([FromBody] CategoryRequestDto dto)
+        {
+            var result = await _service.AddAsync(dto);
+
+            return result is not null ?
+                Ok(result) :
+                BadRequest(new { message = "New Category failed to be added" });
+        }
+
+        // PUT: api/EventsCategories/{id}
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Update(int id, [FromBody] CategoryRequestDto dto)
+        {
+            var result = await _service.UpdateAsync(id, dto);
+
+            return result ?
+                 Ok(new { message = $"Category with ID {id} updated successfully." }) :
+                 BadRequest(new { message = $"Failed to update category with ID {id}." });
+        }
+
+
+    }
+}

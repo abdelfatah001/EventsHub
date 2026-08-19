@@ -29,6 +29,7 @@ namespace Infrastructure.Configurations
             builder.Property(u => u.Role)
                 .IsRequired();
 
+
         }
     }
 }

@@ -32,6 +32,6 @@ namespace Infrastructure.Configurations
                     .HasForeignKey(p => p.OrderId)
                     .OnDelete(DeleteBehavior.Cascade);
         }
-    {
+    
     }
 }

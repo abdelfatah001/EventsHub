@@ -1,7 +1,7 @@
 ﻿
 namespace Domain.Enums
 {
-    public enum enUserRole
+    public enum enUserRole : byte   
     {
         User = 0,
         Organizer = 1,

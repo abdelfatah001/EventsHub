@@ -14,23 +14,23 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<User> Add(User user)
+        public async Task<User?> AddAsync(User user)
         {
             ArgumentNullException.ThrowIfNull(user, nameof(user));
 
             _context.Users.Add(user);
 
-            return await _context.SaveChangesAsync() > 0 ? user : throw new Exception("Failed to add user.");
+            return await _context.SaveChangesAsync() > 0 ? user : null;
         }
 
-        public async Task<ICollection<User> > GetAll()
+        public async Task<ICollection<User> > GetAllAsync()
         {
             return await _context.Users
                 .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task<User?> GetById(int id)
+        public async Task<User?> GetByIdAsync(int id)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id, nameof(id));
 
@@ -39,15 +39,16 @@ namespace Infrastructure.Repositories
                 .FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public async Task<bool> Update(User user)
+        public async Task<bool> UpdateAsync(User user)
         {
             ArgumentNullException.ThrowIfNull(user, nameof(user));
-            
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(user.Id, nameof(user.Id));
+
             _context.Users.Update(user);
 
             return await _context.SaveChangesAsync() > 0;
         }
-        public async Task<bool> ExistsByEmail(string email)
+        public async Task<bool> ExistsByEmailAsync(string email)
         {
             ArgumentException.ThrowIfNullOrEmpty(email, nameof(email));
 
@@ -55,7 +56,7 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .AnyAsync(u => u.Email == email);
         }
-        public async Task<bool> ExistsByPhone(string phone)
+        public async Task<bool> ExistsByPhoneAsync(string phone)
         {
             ArgumentException.ThrowIfNullOrEmpty(phone, nameof(phone));
 

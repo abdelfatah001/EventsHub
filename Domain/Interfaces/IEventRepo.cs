@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Interfaces
 {
-    internal interface IEventRepo
+    public interface IEventRepo
     {
+        Task<Event?> AddAsync(Event @event);
+        Task<Event?> GetByIdAsync(int eventId);
+        Task<IEnumerable<Event>> GetAllAsync();
+        Task<IEnumerable<Event>> GetAllByCategoryIdAsync(int categoryId);
+        Task<IEnumerable<Event>> GetAllByOrganizerIdAsync(int organizerId);
+        Task<bool> UpdateAsync(Event @event);
+        Task<bool> DeleteAsync(Event @event);
     }
 }

@@ -21,7 +21,6 @@ namespace Infrastructure.Configurations
             builder.HasOne(t => t.OrderItem)
                    .WithOne(oi => oi.Ticket)
                    .HasForeignKey<Ticket>(t => t.OrderItemId)
-                   .HasForeignKey<OrderItem>(oi => oi.TicketId)
                    .OnDelete(DeleteBehavior.Restrict);
 
 

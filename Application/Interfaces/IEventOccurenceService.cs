@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DTOs.EventOccurences.Request;
+using Application.DTOs.EventOccurences.Response;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
-    internal interface IEventOccurenceService
+    public interface IEventOccurenceService
     {
+        Task<OccurenceResponseDto?> AddAsync(AddOccurenceDto eventCategory);
+        Task<OccurenceResponseDto?> GetByIdAsync(int eventCategoryId);
+        Task<IEnumerable<OccurenceResponseDto>> GetAllAsync();
+        Task<bool> UpdateAsync(UpdateOccurenceDto eventCategory);
     }
 }

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Application.DTOs.Category.Request;
+using Application.DTOs.Category.Response;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
-    internal interface ICategoryService
+    public interface ICategoryService
     {
+        Task<CategoryResponseDto?> AddAsync(CategoryRequestDto eventCategory);
+        Task<CategoryResponseDto?> GetByIdAsync(int eventCategoryId);
+        Task<IEnumerable<CategoryResponseDto>> GetAllAsync();
+        Task<bool> UpdateAsync(int id, CategoryRequestDto eventCategory);
     }
 }
