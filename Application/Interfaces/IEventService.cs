@@ -13,5 +13,7 @@ namespace Application.Interfaces
         Task<IEnumerable<EventResponseDto>> GetAllByOrganizerIdAsync(int organizerId);
         Task<bool> UpdateAsync(int Id, UpdateEventDto @event);
         Task<bool> DeleteAsync(int eventId);
+        Task<bool> ExistsAsync(int eventId);
+
     }
 }

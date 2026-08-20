@@ -23,9 +23,9 @@ namespace Infrastructure.Configurations
                 .HasColumnType("decimal(18,2)");
 
 
-            builder.HasMany(tt => tt.Tickets)
-                   .WithOne(t => t.TicketType)
-                   .HasForeignKey(t => t.TicketTypeId)
+            builder.HasOne(tt => tt.Occurence)
+                   .WithMany(o => o.TicketTypes)
+                   .HasForeignKey(tt => tt.OccurenceId)
                    .OnDelete(DeleteBehavior.Restrict);
         }
 

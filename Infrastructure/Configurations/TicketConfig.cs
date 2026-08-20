@@ -23,7 +23,10 @@ namespace Infrastructure.Configurations
                    .HasForeignKey<Ticket>(t => t.OrderItemId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-
+            builder.HasOne(t => t.TicketType)
+                   .WithMany(tt => tt.Tickets)
+                   .HasForeignKey(t => t.TicketTypeId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

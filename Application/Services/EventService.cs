@@ -14,7 +14,7 @@ namespace Application.Services
         private readonly IEventRepo _eventRepo;
 
         private readonly IMapper _mapper;
-        public EventService (IEventRepo eventRepo, IMapper mapper)
+        public EventService(IEventRepo eventRepo, IMapper mapper)
         {
             _eventRepo = eventRepo;
             _mapper = mapper;
@@ -76,7 +76,7 @@ namespace Application.Services
 
             if (_event is null)
                 throw new ArgumentNullException(nameof(_event), $"User with ID {Id} does not exist.");
-            
+
             @event.Title = @event.Title;
             @event.Description = @event.Description;
             @event.CategoryId = @event.CategoryId;
@@ -96,6 +96,14 @@ namespace Application.Services
             return await _eventRepo.DeleteAsync(_event);
 
         }
+        public async Task<bool> ExistsAsync(int eventId)
+        {
+            if (eventId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(eventId), eventId, "Event id must be a positive integer.");
+
+            return await _eventRepo.ExistsAsync(eventId);
+        }
+
 
     }
 }

@@ -10,8 +10,8 @@ namespace Domain.Entities
     {
         public int Id { get; set; }
 
-        public int EventId { get; set; }
-        public Event? Event { get; set; }
+        public int OccurenceId { get; set; }
+        public EventOccurence? Occurence { get; set; }
 
         public string Name { get; set; } = null!;
         public string? Description { get; set; }

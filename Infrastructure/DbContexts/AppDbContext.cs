@@ -18,6 +18,7 @@ namespace Infrastructure.DbContexts
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TicketType> TicketTypes { get; set; }
+        public virtual DbSet<Hall> Halls { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         { // to add the date of CreatedAt and UpdatedAt by sql

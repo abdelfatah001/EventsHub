@@ -9,11 +9,12 @@ namespace Application.DTOs.EventOccurences.Request
         public AddOccurenceDtoValidator()
         {
             RuleFor(x => x.Status)
-            .IsInEnum().WithMessage("Status must be a valid value.");
+                .IsInEnum().WithMessage("Status must be a valid value.");
 
-            // Start: required
+            // Start: required and must be in the future
             RuleFor(x => x.StartAt)
-                .NotEmpty().WithMessage("Start date/time is required.");
+                .NotEmpty().WithMessage("Start date/time is required.")
+                .Must((dto, start) => start > DateTime.UtcNow).WithMessage("Start date/time must be in the future.");
 
             // End: required and must be after Start
             RuleFor(x => x.EndAt)

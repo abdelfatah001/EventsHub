@@ -1,10 +1,11 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
 using Infrastructure.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class EventOccurenceRepo : IEventCategoryRepo
+    public class EventOccurenceRepo : IEventOccurenceRepo
     {
         private readonly AppDbContext _context;
 
@@ -14,24 +15,39 @@ namespace Infrastructure.Repositories
         }
 
 
-        public Task<EventCategory?> AddAsync(EventCategory eventCategory)
+        public async Task<EventOccurence?> AddAsync(EventOccurence eventOccurence)
         {
-            throw new NotImplementedException();
+            ArgumentNullException.ThrowIfNull(eventOccurence, nameof(eventOccurence));
+
+            _context.EventOccurences.Add(eventOccurence);
+
+            return await _context.SaveChangesAsync() > 0 ? eventOccurence : null;
         }
 
-        public Task<IEnumerable<EventCategory>> GetAllAsync()
+        public async Task<IEnumerable<EventOccurence>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.EventOccurences
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public Task<EventCategory?> GetByIdAsync(int eventCategoryId)
+        public async Task<EventOccurence?> GetByIdAsync(int eventOccurenceId)
         {
-            throw new NotImplementedException();
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventOccurenceId, nameof(eventOccurenceId));
+
+            return await _context.EventOccurences
+                .AsNoTracking()
+                .FirstOrDefaultAsync(o => o.Id == eventOccurenceId);
         }
 
-        public Task<bool> UpdateAsync(EventCategory eventCategory)
+        public async Task<bool> UpdateAsync(EventOccurence eventOccurence)
         {
-            throw new NotImplementedException();
+            ArgumentNullException.ThrowIfNull(eventOccurence, nameof(eventOccurence));
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventOccurence.Id, nameof(eventOccurence.Id));
+
+            _context.EventOccurences.Update(eventOccurence);
+
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

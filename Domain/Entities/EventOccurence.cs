@@ -11,7 +11,10 @@ namespace Domain.Entities
 
         public int EventId { get; set; }
         public Event Event { get; set; } = null!;
-        
+
+        public int HallId { get; set; }
+        public Hall Hall { get; set; } = null!;
+
         public string Location { get; set; } = null!;
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

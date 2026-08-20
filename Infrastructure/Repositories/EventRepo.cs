@@ -78,5 +78,15 @@ namespace Infrastructure.Repositories
 
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public async Task<bool> ExistsAsync (int eventId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventId, nameof(eventId));
+
+            return await _context.Events
+                .AnyAsync(e => e.Id == eventId);
+
+        }
+
     }
 }

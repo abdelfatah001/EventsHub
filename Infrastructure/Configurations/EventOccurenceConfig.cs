@@ -15,14 +15,22 @@ namespace Infrastructure.Configurations
 
             builder.Property(eo => eo.EndDate)
                    .IsRequired();
+
             builder.Property(eo => eo.Location)
                    .IsRequired()
                    .HasMaxLength(200);
 
             builder.HasOne(eo => eo.Event)
-                   .WithMany(e => e.Events)
+                   .WithMany(e => e.Occurences)
                    .HasForeignKey(eo => eo.EventId)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(eo => eo.Hall)
+                   .WithMany(h => h.Occurences)
+                   .HasForeignKey(eo => eo.HallId)
+                   .OnDelete(DeleteBehavior.Restrict);
+                    
+
         }
     }
 }

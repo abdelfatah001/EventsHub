@@ -5,9 +5,9 @@ using Domain.Entities;
 
 namespace Application.Mappers
 {
-    public class EventsCategoriesProfile : Profile
+    public class EventCategoriesProfile : Profile
     {
-        public EventsCategoriesProfile() 
+        public EventCategoriesProfile() 
         {
             CreateMap<CategoryRequestDto, EventCategory>();
 

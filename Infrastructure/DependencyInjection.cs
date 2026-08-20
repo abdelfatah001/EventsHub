@@ -22,6 +22,9 @@ namespace Infrastructure
 
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IStmpEmailSender, StmpEmailSender>();
+            services.AddScoped<IEventRepo, EventRepo>();
+            services.AddScoped<IEventCategoryRepo, EventCategoryRepo>();
+            services.AddScoped<IEventOccurenceRepo, EventOccurenceRepo>();
             return services;
         }
     }

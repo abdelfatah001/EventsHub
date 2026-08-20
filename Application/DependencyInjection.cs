@@ -4,6 +4,7 @@ using Application.Email;
 using Application.Interfaces;
 using Application.Mappers;
 using Application.Services;
+using Domain.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,15 +17,13 @@ namespace Application
             // Register application services here
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IEventService, EventService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IEventOccurenceService, EventOccurenceService>();
 
             // Add FluentValidation validators
-            services.AddValidatorsFromAssemblyContaining<AddUserDto>();
-            services.AddValidatorsFromAssemblyContaining<UpdateEmailDto>();
-            services.AddValidatorsFromAssemblyContaining<UpdatePasswordDto>();
-            services.AddValidatorsFromAssemblyContaining<UpdateProfileDto>();
-            services.AddValidatorsFromAssemblyContaining<ForgetPasswordDto>();
-            services.AddValidatorsFromAssemblyContaining<SendEmailDto>();
 
+            services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyMarker>();
 
             services.AddAutoMapper(typeof(ApplicationAssemblyMarker).Assembly);
             return services;

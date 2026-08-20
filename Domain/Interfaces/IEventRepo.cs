@@ -11,5 +11,6 @@ namespace Domain.Interfaces
         Task<IEnumerable<Event>> GetAllByOrganizerIdAsync(int organizerId);
         Task<bool> UpdateAsync(Event @event);
         Task<bool> DeleteAsync(Event @event);
+        Task<bool> ExistsAsync (int eventId);
     }
 }
