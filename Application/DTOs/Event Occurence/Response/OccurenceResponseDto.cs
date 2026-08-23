@@ -9,7 +9,7 @@ namespace Application.DTOs.EventOccurences.Response
 
         public int EventId { get; set; }
 
-        public string Location { get; set; } = null!;
+        public int HallId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public enEventStatus Status { get; set; }

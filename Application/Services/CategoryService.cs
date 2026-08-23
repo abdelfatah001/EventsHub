@@ -38,9 +38,9 @@ namespace Application.Services
             if (eventCategoryId <= 0)
                 throw new ArgumentOutOfRangeException(nameof(eventCategoryId), eventCategoryId, "Event category id must be a positive integer.");
 
-            var categories = await _categoryRepo.GetByIdAsync(eventCategoryId);
+            var category = await _categoryRepo.GetByIdAsync(eventCategoryId);
 
-            return _mapper.Map<CategoryResponseDto>(categories);
+            return _mapper.Map<CategoryResponseDto>(category);
         }
 
         public async Task<bool> UpdateAsync(int id, CategoryRequestDto eventCategory)

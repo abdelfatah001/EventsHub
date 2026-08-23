@@ -18,9 +18,8 @@ namespace Application.DTOs.EventOccurences.Request
                 .NotEmpty().WithMessage("End date/time is required.")
                 .GreaterThan(x => x.StartAt).WithMessage("End date/time must be after Start date/time.");
 
-            RuleFor(x => x.Location)
-                .MaximumLength(200).WithMessage("Location must not exceed 200 characters.")
-                .NotEmpty().WithMessage("Location is required");
+            RuleFor(x => x.HallId)
+                .NotEmpty().WithMessage("Hall Id is required");
 
         }
     }

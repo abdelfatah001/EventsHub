@@ -24,10 +24,19 @@ namespace Infrastructure.Repositories
             return await _context.SaveChangesAsync() > 0 ? eventOccurence : null;
         }
 
-        public async Task<IEnumerable<EventOccurence>> GetAllAsync()
+        public async Task<IEnumerable<EventOccurence>?> GetAllAsync()
         {
             return await _context.EventOccurences
                 .AsNoTracking()
+                .ToListAsync();
+        }
+        public async Task<IEnumerable<EventOccurence>?> GetAllByEventIdAsync(int eventId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventId, nameof(eventId));
+
+            return await _context.EventOccurences
+                .AsNoTracking()
+                .Where(o => o.EventId == eventId)
                 .ToListAsync();
         }
 
@@ -49,5 +58,34 @@ namespace Infrastructure.Repositories
 
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public async Task<bool> IsHallAvaliableAsync (int hallId, DateTime startDate,  DateTime endDate)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(hallId);
+
+            if (startDate >= endDate)
+                throw new ArgumentException();
+
+            return !await _context.EventOccurences
+                .AsNoTracking()
+                .AnyAsync(x =>
+                    (x.HallId == hallId) && 
+                    (x.StartDate < endDate) && 
+                    (x.EndDate > startDate));
+        }
+
+        // to ensure is that hall booked in future or not to deactivate it
+        public async Task<bool> IsHallBooked(int hallId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(hallId);
+
+            var now = DateTime.UtcNow;
+
+            return await _context.EventOccurences
+                .AsNoTracking()
+                .AnyAsync(h => h.HallId == hallId && h.StartDate > now);
+        }
+
+
     }
 }

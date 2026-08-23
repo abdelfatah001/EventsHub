@@ -6,9 +6,10 @@ namespace Application.Interfaces
 {
     public interface IEventOccurenceService
     {
-        Task<OccurenceResponseDto?> AddAsync(AddOccurenceDto eventCategory);
-        Task<OccurenceResponseDto?> GetByIdAsync(int eventCategoryId);
+        Task<OccurenceResponseDto?> AddAsync(AddOccurenceDto eventOccurence);
+        Task<OccurenceResponseDto?> GetByIdAsync(int eventOccurenceId);
         Task<IEnumerable<OccurenceResponseDto>> GetAllAsync();
-        Task<bool> UpdateAsync(UpdateOccurenceDto eventCategory);
+        Task<IEnumerable<OccurenceResponseDto>> GetAllByEventIdAsync(int eventId);
+        Task<bool> UpdateAsync(int Id, UpdateOccurenceDto eventOccurence);
     }
 }

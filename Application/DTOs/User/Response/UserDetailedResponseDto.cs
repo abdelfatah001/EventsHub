@@ -19,4 +19,4 @@ namespace Application.DTOs.User.Response
         public DateTime UpdatedAt { get; set; }
     }
 }
-}
+

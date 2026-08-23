@@ -20,6 +20,8 @@ namespace Domain.Entities
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
+
+        public Cart? CurrentCart { get; set; }
         public ICollection<Order> Orders { get; set; } = null!;
         public ICollection<Event> Events { get; set; } = null!;
         public ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
