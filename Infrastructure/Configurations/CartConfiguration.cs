@@ -17,6 +17,8 @@ namespace Infrastructure.Configurations
             builder.Property(o => o.Status)
                    .IsRequired();
 
+            builder.HasIndex(c => c.UserId);
+
             builder.HasOne(c => c.User)
                    .WithOne(u => u.CurrentCart)
                    .HasForeignKey<Cart>(c => c.UserId)

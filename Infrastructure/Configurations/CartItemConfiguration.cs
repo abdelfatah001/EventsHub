@@ -19,6 +19,8 @@ namespace Infrastructure.Configurations
                    .IsRequired()
                    .HasColumnType("decimal(18,2)");
 
+            builder.HasIndex(x => x.CartId);
+
             builder.HasOne(x => x.Cart)
                    .WithMany(o => o.CartItems)
                    .HasForeignKey(x => x.CartId)

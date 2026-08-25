@@ -22,6 +22,7 @@ namespace Infrastructure.Configurations
                    .HasForeignKey(o => o.UserId)
                    .OnDelete(DeleteBehavior.Restrict);  
 
+            builder.HasIndex(o => o.UserId);
 
         }
     }

@@ -22,7 +22,8 @@ namespace Infrastructure.Configurations
                    .WithMany(o => o.OrderItems)
                    .HasForeignKey(oi => oi.OrderId)
                    .OnDelete(DeleteBehavior.Cascade);
-           
+
+            builder.HasIndex(x => x.OrderId);
 
         }
     }

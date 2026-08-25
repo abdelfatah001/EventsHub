@@ -28,6 +28,9 @@ namespace Infrastructure.Configurations
                    .HasForeignKey(e => e.OrganizerId)
                    .OnDelete(DeleteBehavior.Cascade);
 
+
+            builder.HasIndex(e => e.OrganizerId);
+            builder.HasIndex(e => e.CategoryId);
         }
     }
 }

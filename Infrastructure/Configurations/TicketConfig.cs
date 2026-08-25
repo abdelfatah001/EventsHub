@@ -27,6 +27,9 @@ namespace Infrastructure.Configurations
                    .WithMany(tt => tt.Tickets)
                    .HasForeignKey(t => t.TicketTypeId)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasIndex(t => t.TicketTypeId);
+            builder.HasIndex(t => t.OrderItemId);
         }
     }
 }

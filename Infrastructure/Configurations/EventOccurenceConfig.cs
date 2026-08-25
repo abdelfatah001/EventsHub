@@ -29,7 +29,14 @@ namespace Infrastructure.Configurations
                    .WithMany(h => h.Occurences)
                    .HasForeignKey(eo => eo.HallId)
                    .OnDelete(DeleteBehavior.Restrict);
-                    
+
+            builder.HasIndex(eo => eo.EventId);
+            builder.HasIndex(e => new
+                {
+                    e.HallId,
+                    e.StartDate,
+                }); 
+
 
         }
     }

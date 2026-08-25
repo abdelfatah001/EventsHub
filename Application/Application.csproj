@@ -20,4 +20,9 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\CartSummary\" />
+    <Folder Include="DTOs\OrderSummary\" />
+  </ItemGroup>
+
 </Project>
