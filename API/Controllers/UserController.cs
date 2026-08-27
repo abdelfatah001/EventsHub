@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Application.Interfaces;
-using Application.DTOs.User.Request;
+using Application.Users;
+using Application.Users.Dto.Request;
 
 namespace API.Controllers
 {

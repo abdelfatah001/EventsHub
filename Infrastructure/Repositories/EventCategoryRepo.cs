@@ -35,7 +35,7 @@ namespace Infrastructure.Repositories
 
         public async Task<EventCategory?> GetByIdAsync(int eventCategoryId)
         {
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventCategoryId, nameof(eventCategoryId));
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventCategoryId);
 
             return await _context.EventCategories
                 .AsNoTracking()

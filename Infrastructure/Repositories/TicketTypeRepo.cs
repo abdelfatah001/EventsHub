@@ -43,6 +43,19 @@ namespace Infrastructure.Repositories
 
         }
 
+        public async Task<bool> IsThereAvaliableTicketsAsync(int ticketTypeId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
+
+            int avaliableTickets = await _context.TicketTypes
+                .AsNoTracking()
+                .Where(x => x.Id == ticketTypeId)
+                .Select(x => x.AvailableQuantity)
+                .FirstOrDefaultAsync();
+
+            return avaliableTickets > 0;
+        }
+
         public async Task<bool> UpdateAsync(TicketType ticketType)
         {
             ArgumentNullException.ThrowIfNull(ticketType);
@@ -53,5 +66,35 @@ namespace Infrastructure.Repositories
             return await _context.SaveChangesAsync() > 0;
 
         }
+
+        public async Task IncrementAvaliableQuantityAsyncBy(int ticketTypeId, int quantityToIncrement)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
+
+            var ticketType = await GetByIdAsync(ticketTypeId);
+
+            if (ticketType == null)
+                throw new ArgumentNullException(nameof(ticketType));
+
+            ticketType.AvailableQuantity += quantityToIncrement;
+
+            await UpdateAsync(ticketType);
+        }
+
+        public async Task DecrementAvaliableQuantityAsyncBy(int ticketTypeId, int quantityToDecrement)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
+
+            var ticketType = await GetByIdAsync(ticketTypeId);
+
+            if (ticketType == null)
+                throw new ArgumentNullException(nameof(ticketType));
+
+            ticketType.AvailableQuantity -= quantityToDecrement;
+
+            await UpdateAsync(ticketType);
+        }
+
+
     }
 }

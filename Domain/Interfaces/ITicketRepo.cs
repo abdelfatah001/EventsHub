@@ -10,10 +10,13 @@ namespace Domain.Interfaces
 
         Task<IEnumerable<Ticket>> GetAllByOrderItemIdAsync(int orderItemId);
 
+        Task<Ticket?> GetByTicketCodeAsync(string ticketCode);
+
         Task<Ticket?> GetByIdAsync (int ticketId);
 
         Task<bool> UpdateAsync(Ticket ticket);
 
+        Task<bool> IsCodeUniqueAsync(string code);
 
     }
 }

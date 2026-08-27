@@ -51,6 +51,15 @@ namespace Infrastructure.Repositories
             return await _context.Tickets
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == ticketId);
+        }        
+
+        public async Task<Ticket?> GetByTicketCodeAsync(string ticketCode)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(ticketCode);
+
+            return await _context.Tickets
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.TicketCode == ticketCode);
         }
 
         public async Task<bool> UpdateAsync(Ticket ticket)
@@ -62,5 +71,15 @@ namespace Infrastructure.Repositories
 
             return await _context.SaveChangesAsync() > 0;
         }
+        public async Task<bool> IsCodeUniqueAsync(string code)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(code);
+
+            return !await _context.Tickets
+               .AsNoTracking()
+               .AnyAsync(x => x.TicketCode == code);
+        }
+
+
     }
 }

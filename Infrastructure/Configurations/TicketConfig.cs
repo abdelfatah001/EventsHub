@@ -30,6 +30,9 @@ namespace Infrastructure.Configurations
 
             builder.HasIndex(t => t.TicketTypeId);
             builder.HasIndex(t => t.OrderItemId);
+
+            builder.HasIndex(t => t.TicketCode)
+                   .IsUnique();
         }
     }
 }

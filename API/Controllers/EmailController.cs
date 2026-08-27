@@ -1,5 +1,5 @@
-﻿using Application.DTOs.Email;
-using Application.Interfaces;
+﻿using Application.Email;
+using Application.Email.Dto;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 

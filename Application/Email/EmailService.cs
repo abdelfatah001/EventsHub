@@ -1,5 +1,4 @@
-﻿using Application.DTOs.Email;
-using Application.Interfaces;
+﻿using Application.Email.Dto;
 using Domain.Interfaces;
 
 namespace Application.Email

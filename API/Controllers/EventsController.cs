@@ -1,6 +1,6 @@
-﻿using Application.DTOs.Events.Request;
-using Application.DTOs.Events.Response;
-using Application.Interfaces;
+﻿using Application.Events;
+using Application.Events.Dto.Request;
+using Application.Events.Dto.Response;
 using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

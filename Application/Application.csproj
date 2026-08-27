@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\CartSummary\" />
-    <Folder Include="DTOs\OrderSummary\" />
+    <Folder Include="Carts\Dto\" />
+    <Folder Include="Orders\Dto\" />
   </ItemGroup>
 
 </Project>
