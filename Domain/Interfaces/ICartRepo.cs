@@ -7,5 +7,11 @@ namespace Domain.Interfaces
         Task<Cart?> AddAsync (Cart cart);
         Task<Cart?> GetCurrentCartByUserIdAsync (int userId);
         Task<Cart?> GetByIdAsync(int cartId);
+        
+        // to mark cart as ordered
+        Task<bool> UpdateAsync (Cart cart);
+
+        Task<bool> UpdateTotalAmount (int amount);
+
     }
 }

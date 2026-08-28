@@ -9,7 +9,7 @@ namespace Domain.Enums
     public enum enCartStatus
     {
         Active = 0,
-        Converted = 1,
+        Ordered = 1,
         Expired = 2
     }
 }

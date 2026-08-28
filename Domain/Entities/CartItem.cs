@@ -9,6 +9,8 @@ namespace Domain.Entities
         public int CartId { get; set; }
         public Cart? Cart { get; set; }
 
+        public int TicketTypeId { get; set; }
+
         public int TicketId { get; set; }
         public Ticket? Ticket { get; set; }
 

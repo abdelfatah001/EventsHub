@@ -1,41 +1,71 @@
-﻿using Application.Tickets.Dto.Request;
-using Application.Tickets.Dto.Response;
+﻿using Application.Tickets.Dto.Response;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using Domain.Exceptions;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.WebUtilities;
+using System.Collections.Generic;
 
 namespace Application.Tickets
 {
     public class TicketService : ITicketService
     {
         private readonly ITicketRepo _repo;
-        private readonly ITicketTypeRepo _typeRepo;
+        private readonly ITicketTypeRepo _ticketTypeRepo;
         private readonly ITicketGenerator _ticketGenerator;
         private readonly IMapper _mapper;
         public TicketService(ITicketRepo repo, ITicketTypeRepo ticketTypeRepo, ITicketGenerator ticketGenerator, IMapper mapper)
         {
             _repo = repo;
-            _typeRepo = ticketTypeRepo;
+            _ticketTypeRepo = ticketTypeRepo;
             _ticketGenerator = ticketGenerator;
             _mapper = mapper;
         }
-
-        public async Task<TicketResponseDto> AddAsync(IssueTicketDto issuedTicket)
+        public async Task<IEnumerable<TicketResponseDto>> AddTicketsAsync(int ticketTypeId, int orderItemId, int Amount)
         {
-            if (issuedTicket is null)
-                throw new ArgumentNullException(nameof(issuedTicket), "Issue Ticket payload cannot be null.");
+            if (ticketTypeId <= 0)
+                throw new ArgumentOutOfRangeException("Ticket type id must be a positive integer.");
 
-            if (!await _typeRepo.IsThereAvaliableTicketsAsync(issuedTicket.TicketTypeId))
-                throw new TicketUnavailableException("There are no available tickets of this type.");
+            if (orderItemId <= 0)
+                throw new ArgumentOutOfRangeException("Order item id must be a positive integer.");
 
-            var ticket = await _ticketGenerator.GenerateTicket(issuedTicket);
+            if (Amount <= 0)
+                throw new ArgumentOutOfRangeException("Amount must be a positive integer.");
 
-            ticket = await _repo.AddAsync(ticket);
+            ICollection<Ticket> tickets = new List<Ticket>();
 
-            return _mapper.Map<TicketResponseDto>(ticket);
+            for (int i = 0; i < ticketTypeId; i++)
+            {
+                var ticket = await _ticketGenerator.GenerateTicket(ticketTypeId, orderItemId);
+
+                tickets.Add(ticket);
+            }
+            var ticketType = await _ticketTypeRepo.GetByIdAsync(ticketTypeId);
+
+            var isAdded = await _repo.AddRangeAsync(tickets);
+
+            if (!isAdded)
+                return null;
+
+            ICollection<TicketResponseDto> issuedtickets = new List<TicketResponseDto>();
+
+            foreach (var ticket in tickets)
+            {
+                var issuedTicket = new TicketResponseDto
+                {
+                    TicketCode = ticket.TicketCode,
+                    Price = ticketType.Price,
+                    TicketTypeName = ticketType.Name,
+                    IssuedAt = ticket.IssuedAt
+                };
+
+                issuedtickets.Add(issuedTicket);
+            }
+
+            return issuedtickets;
         }
+
 
         public async Task<IEnumerable<TicketDetailedResponseDto>> GetAllByOrderItemIdAsync(int orderItemId)
         {

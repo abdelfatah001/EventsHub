@@ -1,12 +1,10 @@
-﻿using Application.Tickets.Dto.Request;
-using Application.Tickets.Dto.Response;
-using Domain.Entities;
+﻿using Application.Tickets.Dto.Response;
 
 namespace Application.Tickets
 {
     public interface ITicketService
     {
-        Task<TicketResponseDto> AddAsync(IssueTicketDto ticket);
+        Task<IEnumerable<TicketResponseDto>> AddTicketsAsync(int ticketTypeId, int orderItemId, int Amount);
 
         Task<IEnumerable<TicketDetailedResponseDto>> GetAllByTicketTypeIdAsync(int ticketTypeId);
 

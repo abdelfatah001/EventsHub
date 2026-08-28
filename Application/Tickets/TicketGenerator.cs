@@ -1,5 +1,4 @@
-﻿using Application.Tickets.Dto.Request;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Enums;
 using Domain.Interfaces;
 using System.Security.Cryptography;
@@ -16,14 +15,14 @@ namespace Application.Tickets
             _ticketRepo = ticketRepo;
         }
 
-        public async Task<Ticket> GenerateTicket(IssueTicketDto dto)
+        public async Task<Ticket> GenerateTicket(int ticketTypeId, int orderItemId)
         {
             return new Ticket
             {
-                OrderItemId = dto.OrderItemId,
-                TicketTypeId = dto.TicketTypeId,
+                OrderItemId = orderItemId,
+                TicketTypeId = ticketTypeId,
                 TicketCode = await GenerateTicketCode(),
-                Status = enTicketStatus.Active,
+                Status = enTicketStatus.Sold,
                 IssuedAt = DateTime.Now
             };
         }

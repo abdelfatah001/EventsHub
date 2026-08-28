@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.OrderItems
 {
-    internal class OrderItemService
+    public class OrderItemService
     {
     }
 }

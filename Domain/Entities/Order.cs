@@ -16,7 +16,7 @@ namespace Domain.Entities
         public enOrderStatus Status { get; set; }
 
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime ExpiresAt { get; set; }
 
 
         public ICollection<OrderItem> OrderItems { get; set; } = null!;

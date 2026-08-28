@@ -12,8 +12,10 @@ namespace Domain.Entities
         public int TicketId { get; set; }
         public Ticket? Ticket { get; set; }
 
+        public int TicketTypeId { get; set; }
+
         public int Quantity { get; set; }
-        public int UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
 
     }
 }

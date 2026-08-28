@@ -9,9 +9,9 @@ namespace Application.Tickets.Dto.Response
 {
     public class TicketResponseDto
     {
-        public enTicketStatus status { get; set; }
-        public DateTime IssuedAt { get; set; }
+        public string TicketCode { get; set; } = null!;
         public string TicketTypeName { get; set; } = null!;
+        public DateTime IssuedAt { get; set; }
 
         public double Price { get; set; }
 

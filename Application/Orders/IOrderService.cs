@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.OrderItems.Dto.Request;
+using Domain.Entities;
 
 namespace Application.Orders
 {
-    internal interface IOrderService
+    public interface IOrderService
     {
+        Task<Order> CreateOrderAsync(int userId);
     }
 }

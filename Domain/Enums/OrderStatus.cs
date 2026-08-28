@@ -3,10 +3,9 @@ namespace Domain.Enums
 {
     public enum enOrderStatus
     {
-        pending = 0,
+        PendingPayment = 0,
         paid = 1,
-        paymentFailed = 2,
+        Expired = 2,
         cancelled = 3,
-        refunded = 4
     }
 }

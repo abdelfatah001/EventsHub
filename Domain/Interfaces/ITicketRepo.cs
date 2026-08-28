@@ -4,7 +4,7 @@ namespace Domain.Interfaces
 {
     public interface ITicketRepo
     {
-        Task<Ticket?> AddAsync(Ticket ticket);
+        Task<bool> AddRangeAsync(IEnumerable<Ticket> tickets);
 
         Task<IEnumerable<Ticket>> GetAllByTicketTypeIdAsync(int ticketTypeId);
 

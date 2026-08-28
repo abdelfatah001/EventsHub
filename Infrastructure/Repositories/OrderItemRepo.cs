@@ -15,13 +15,13 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<OrderItem?> AddAsync(OrderItem item)
+        public OrderItem AddA(OrderItem item)
         {
             ArgumentNullException.ThrowIfNull(item, nameof(item));
 
             _context.OrderItems.Add(item);
 
-            return await _context.SaveChangesAsync() > 0 ? item : null;
+            return item;
         }
 
         public async Task<OrderItem?> GetById(int itemId)

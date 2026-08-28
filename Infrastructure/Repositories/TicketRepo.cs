@@ -15,13 +15,13 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Ticket?> AddAsync(Ticket ticket)
+        public async Task<bool> AddRangeAsync(IEnumerable<Ticket> tickets)
         {
-            ArgumentNullException.ThrowIfNull(ticket);
+            ArgumentNullException.ThrowIfNull(tickets);
 
-            _context.Tickets.Add(ticket);
+            await _context.Tickets.AddRangeAsync(tickets);
 
-            return await _context.SaveChangesAsync() > 0 ? ticket : null;
+            return true;
         }
 
         public async Task<IEnumerable<Ticket>> GetAllByOrderItemIdAsync(int orderItemId)
@@ -80,6 +80,6 @@ namespace Infrastructure.Repositories
                .AnyAsync(x => x.TicketCode == code);
         }
 
-
+        
     }
 }

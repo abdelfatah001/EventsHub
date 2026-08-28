@@ -4,8 +4,9 @@ namespace Domain.Enums
 {
     public enum enTicketStatus
     {
-        Active = 0,
-        Cancelled = 1,
-        Used = 2
+        Reserved = 1,
+        Sold = 2,
+        Expired = 3,
+        Used = 4
     }
 }

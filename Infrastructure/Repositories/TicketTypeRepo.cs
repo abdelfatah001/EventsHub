@@ -13,7 +13,7 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
-
+       
         public async Task<TicketType?> AddAsync(TicketType ticketType)
         {
             ArgumentNullException.ThrowIfNull(ticketType);
@@ -43,7 +43,7 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<bool> IsThereAvaliableTicketsAsync(int ticketTypeId)
+        public async Task<bool> IsThereAvaliableTicketsAsync(int ticketTypeId, int Quantity)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
 
@@ -53,7 +53,7 @@ namespace Infrastructure.Repositories
                 .Select(x => x.AvailableQuantity)
                 .FirstOrDefaultAsync();
 
-            return avaliableTickets > 0;
+            return avaliableTickets >= Quantity;
         }
 
         public async Task<bool> UpdateAsync(TicketType ticketType)
@@ -67,34 +67,31 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task IncrementAvaliableQuantityAsyncBy(int ticketTypeId, int quantityToIncrement)
+        public async Task<bool> TryReserveAsync(int ticketTypeId, int quantity)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
+
+            var affectedRows = await _context.TicketTypes
+                .Where(t => t.Id == ticketTypeId && t.AvailableQuantity >= quantity)
+                .ExecuteUpdateAsync(setters =>
+                    setters.SetProperty(
+                        t => t.AvailableQuantity,
+                        t => t.AvailableQuantity - quantity));
+
+            return affectedRows > 0;
+
+        }
+
+        public async Task<double> GetPriceAsync(int ticketTypeId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
 
-            var ticketType = await GetByIdAsync(ticketTypeId);
+            return await _context.TicketTypes
+                .Where(x => x.Id == ticketTypeId)
+                .Select(x => x.Price)
+                .FirstOrDefaultAsync();
 
-            if (ticketType == null)
-                throw new ArgumentNullException(nameof(ticketType));
-
-            ticketType.AvailableQuantity += quantityToIncrement;
-
-            await UpdateAsync(ticketType);
         }
-
-        public async Task DecrementAvaliableQuantityAsyncBy(int ticketTypeId, int quantityToDecrement)
-        {
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
-
-            var ticketType = await GetByIdAsync(ticketTypeId);
-
-            if (ticketType == null)
-                throw new ArgumentNullException(nameof(ticketType));
-
-            ticketType.AvailableQuantity -= quantityToDecrement;
-
-            await UpdateAsync(ticketType);
-        }
-
-
     }
 }

@@ -2,6 +2,7 @@
 using Application.TicketTypes.Dto.Respond;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Exceptions;
 using Domain.Interfaces;
 
 namespace Application.TicketTypes
@@ -21,7 +22,7 @@ namespace Application.TicketTypes
             if (newTicketType is null)
                 throw new ArgumentNullException(nameof(newTicketType), "Ticket Type add payload cannot be null.");
 
-            var ticketType = await _repo.AddAsync(_mapper.Map<Dto>(newTicketType));
+            var ticketType = await _repo.AddAsync(_mapper.Map<TicketType>(newTicketType));
 
             return _mapper.Map<TicketTypeDetailedResponseDto>(ticketType);
         }
@@ -78,17 +79,22 @@ namespace Application.TicketTypes
             ticketType.Description = updateTicketType.Description;
             ticketType.Price = updateTicketType.Price;
 
+          
             // if quantity changed
             if (updateTicketType.Quantity != ticketType.Quantity)
             {
                 var bookedQty = ticketType.Quantity - ticketType.AvailableQuantity;
 
-                if (bookedQty <= updateTicketType.Quantity)
+                if (updateTicketType.Quantity < bookedQty)
                 {
-                    ticketType.Quantity = updateTicketType.Quantity;
-                    // new avaliable Qty = updateQty - bookedQuantity
-                    ticketType.AvailableQuantity = ticketType.Quantity - bookedQty;
+                    throw new BusinessException
+                        ($"Cannot reduce quantity to { updateTicketType.Quantity } because { bookedQty } tickets are already booked.");
                 }
+
+                ticketType.Quantity = updateTicketType.Quantity;
+                // new avaliable Qty = updateQty - bookedQuantity
+                ticketType.AvailableQuantity = ticketType.Quantity - bookedQty;
+
             }
 
             return await _repo.UpdateAsync(ticketType);

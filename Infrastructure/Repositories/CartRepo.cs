@@ -36,11 +36,35 @@ namespace Infrastructure.Repositories
         public async Task<Cart?> GetCurrentCartByUserIdAsync(int userId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(userId);
-
+            // TODO : get cart with their items belong to
             return await _context.Carts
                 .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.UserId == userId && c.Status == enCartStatus.Active);
               
+        }
+
+
+        public async Task<bool> UpdateAsync(Cart cart)
+        {
+            ArgumentNullException.ThrowIfNull(cart, nameof(cart));
+
+            _context.Carts.Update(cart);
+
+            return await _context.SaveChangesAsync() > 0;
+
+        }
+
+        public async Task<bool> UpdateTotalAmount(int cartId, int amount)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(amount);
+
+            int affectedRows = await _context.Carts
+                .Where(x => x.Id == cartId)
+                .ExecuteUpdateAsync(setters =>
+                    setters.SetProperty(
+                        x => x.TotalAmount, amount);
+
+            return affectedRows > 0;
         }
     }
 }

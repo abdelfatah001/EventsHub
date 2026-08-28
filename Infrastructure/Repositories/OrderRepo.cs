@@ -14,13 +14,13 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Order?> AddAsync(Order order)
+        public Order Add(Order order)
         {
             ArgumentNullException.ThrowIfNull(order, nameof(order));
             
             _context.Orders.Add(order);
 
-            return await _context.SaveChangesAsync() > 0 ? order : null;
+            return order;
         }
 
         public async Task<IEnumerable<Order>?> GetAllByUserIdAsync(int userId)
