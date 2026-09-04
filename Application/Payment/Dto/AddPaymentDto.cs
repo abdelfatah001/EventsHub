@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Interfaces
+namespace Application.Payment.Dto
 {
-    internal interface IPaymentRepo
+    internal class AddPaymentDto
     {
     }
 }

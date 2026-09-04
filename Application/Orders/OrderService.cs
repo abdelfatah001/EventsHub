@@ -45,7 +45,7 @@ namespace Application.Orders
 
             try
             {
-                var order = new Order
+                var order = new Order()
                 {
                     UserId = userId,
                     Status = enOrderStatus.PendingPayment,
