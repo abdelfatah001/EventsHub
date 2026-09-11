@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Net.Http.Headers;
 
-namespace Application.Payment.Paymob
+namespace Application.Payments.Paymob
 {
     public class PaymobClient
     {

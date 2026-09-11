@@ -1,6 +1,6 @@
 ﻿using Domain.Contracts;
 
-namespace Domain.Interfaces.Payment
+namespace Domain.Interfaces.PaymentService
 {
     public interface IHmacValidator
     {

@@ -9,15 +9,15 @@ namespace Application.Users
     {
         public UserProfile()
         {
-            CreateMap<AddUserDto, Dto>();
+            CreateMap<AddUserDto, User>();
 
-            CreateMap<Dto, UserResponseDto>();
+            CreateMap<User, UserResponseDto>();
 
-            CreateMap<UpdateEmailDto, Dto>();
-            CreateMap<UpdatePasswordDto, Dto>();
-            CreateMap<UpdateProfileDto, Dto>();
+            CreateMap<UpdateEmailDto, User>();
+            CreateMap<UpdatePasswordDto, User>();
+            CreateMap<UpdateProfileDto, User>();
 
-            CreateMap<Dto, UserDetailedResponseDto>();
+            CreateMap<User, UserDetailedResponseDto>();
         }
     }
 }

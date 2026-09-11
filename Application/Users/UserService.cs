@@ -1,5 +1,4 @@
-﻿using Application.Mappers;
-using Application.Users.Dto.Request;
+﻿using Application.Users.Dto.Request;
 using Application.Users.Dto.Response;
 using AutoMapper;
 using Domain.Entities;

@@ -22,8 +22,8 @@ namespace Application.Tickets
             _ticketGenerator = ticketGenerator;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<TicketResponseDto>> AddTicketsAsync(int ticketTypeId, int orderItemId, int Amount)
-        {
+        public async Task<IEnumerable<TicketResponseDto>?> AddTicketsAsync(int ticketTypeId, int orderItemId, int Amount)
+        { // it doesn't add tickets to database, it just generate and tracked them as added
             if (ticketTypeId <= 0)
                 throw new ArgumentOutOfRangeException("Ticket type id must be a positive integer.");
 
@@ -35,7 +35,7 @@ namespace Application.Tickets
 
             ICollection<Ticket> tickets = new List<Ticket>();
 
-            for (int i = 0; i < ticketTypeId; i++)
+            for (int i = 0; i < Amount; i++)
             {
                 var ticket = await _ticketGenerator.GenerateTicket(ticketTypeId, orderItemId);
 

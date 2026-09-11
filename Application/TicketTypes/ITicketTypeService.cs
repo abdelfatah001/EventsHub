@@ -17,6 +17,6 @@ namespace Application.TicketTypes
 
         Task<bool> UpdateAsync (int id, UpdateTicketTypeDto updateTicketType);
 
-
+        Task ReleaseReservedTickets (int ticketTypeId, int quantity);
     }
 }

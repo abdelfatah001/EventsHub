@@ -18,6 +18,11 @@ namespace Infrastructure.Configurations
                    .IsRequired()
                    .HasMaxLength(100);
 
+
+            builder.Property(p => p.ProviderReference)
+                   .IsRequired()
+                   .HasMaxLength(50);
+
             builder.Property(p => p.TransactionId)
                    .IsRequired();
 

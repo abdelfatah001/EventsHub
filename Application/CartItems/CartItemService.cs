@@ -73,7 +73,7 @@ namespace Application.CartItems
 
             await _repo.UpdateAsync(item);
 
-            await _cartRepo.UpdateTotalAmount( await _repo.CalculateCartTotalAmount(cartId));
+            await _cartRepo.UpdateTotalAmount(cartId, await _repo.CalculateCartTotalAmount(cartId));
 
 
         } 
@@ -90,7 +90,7 @@ namespace Application.CartItems
 
             await _repo.DeleteAsync(item);
 
-            await _cartRepo.UpdateTotalAmount(await _repo.CalculateCartTotalAmount(cartId));
+            await _cartRepo.UpdateTotalAmount(cartId, await _repo.CalculateCartTotalAmount(cartId));
         }
 
     }

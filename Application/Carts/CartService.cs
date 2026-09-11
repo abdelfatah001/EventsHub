@@ -60,7 +60,7 @@ namespace Application.Carts
 
             await _repo.UpdateAsync(cart);
         }
-
+        /*
         public Task UpdateTotalAmountAsync(int cartId, int totalAmount)
         {
             if (cartId <= 0)
@@ -71,6 +71,6 @@ namespace Application.Carts
 
 
 
-        }
+        }*/
     }
 }

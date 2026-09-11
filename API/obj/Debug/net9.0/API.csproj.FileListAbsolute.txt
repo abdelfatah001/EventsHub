@@ -95,3 +95,4 @@ D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dl
 D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\EventsHub\EventsHub\API\bin\Debug\net9.0\AutoMapper.dll
 D:\EventsHub\EventsHub\API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\EventsHub\EventsHub\API\obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cs

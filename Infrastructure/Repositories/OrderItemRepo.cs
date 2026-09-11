@@ -15,7 +15,7 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public OrderItem AddA(OrderItem item)
+        public OrderItem Add(OrderItem item)
         {
             ArgumentNullException.ThrowIfNull(item, nameof(item));
 

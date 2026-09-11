@@ -23,7 +23,6 @@
   <ItemGroup>
     <Folder Include="CartItems\Dto\Response\" />
     <Folder Include="Carts\Dto\" />
-    <Folder Include="Orders\Dto\" />
     <Folder Include="Tickets\Dto\Request\" />
   </ItemGroup>
 

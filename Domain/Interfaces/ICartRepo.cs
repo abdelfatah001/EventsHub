@@ -11,7 +11,7 @@ namespace Domain.Interfaces
         // to mark cart as ordered
         Task<bool> UpdateAsync (Cart cart);
 
-        Task<bool> UpdateTotalAmount (int amount);
+        Task<bool> UpdateTotalAmount (int cartId, int amount);
 
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Application.Events;
 using Application.Events.Dto.Request;
 using Application.Events.Dto.Response;
-using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

@@ -41,5 +41,15 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == orderId);
         }
+
+        public async Task<Order?> GetDetailedOrderByIdAsync(int orderId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(orderId);
+
+            return await _context.Orders
+                .AsNoTracking()
+                .Include(x => x.OrderItems)
+                .FirstOrDefaultAsync(c => c.Id == orderId);
+        }
     }
 }

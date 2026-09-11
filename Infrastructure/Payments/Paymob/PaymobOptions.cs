@@ -1,4 +1,4 @@
-﻿namespace Application.Payment.Paymob
+﻿namespace Application.Payments.Paymob
 {
     public class PaymobOptions
     {

@@ -1,4 +1,4 @@
-﻿using Application.Payment.Paymob;
+﻿using Application.Payments.Paymob;
 using Domain.Entities;
 using Domain.Interfaces;
 using Infrastructure.DbContexts;

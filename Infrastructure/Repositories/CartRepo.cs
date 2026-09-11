@@ -62,9 +62,10 @@ namespace Infrastructure.Repositories
                 .Where(x => x.Id == cartId)
                 .ExecuteUpdateAsync(setters =>
                     setters.SetProperty(
-                        x => x.TotalAmount, amount);
+                        x => x.TotalAmount, amount));
 
             return affectedRows > 0;
         }
+
     }
 }

@@ -1,19 +1,18 @@
-﻿using Application.Payment.Paymob;
-using Domain.Contracts;
+﻿using Domain.Contracts;
 using Domain.Entities;
-using Domain.Interfaces.Payment;
+using Domain.Interfaces.PaymentService;
 using Infrastructure.Payments.Paymob.DTOs;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
-namespace Application.Payment
+namespace Application.Payments.Paymob
 {
-    public class PaymobPaymentRepo : IPaymentRepo
+    public class PaymobPaymentService : IPaymentService
     {
         private readonly PaymobOptions _options;
         private readonly PaymobClient _paymobClient;
 
-        public PaymobPaymentRepo(IOptions<PaymobOptions> options, PaymobClient paymobClient)
+        public PaymobPaymentService(IOptions<PaymobOptions> options, PaymobClient paymobClient)
         {
             _options = options.Value;
             _paymobClient = paymobClient;

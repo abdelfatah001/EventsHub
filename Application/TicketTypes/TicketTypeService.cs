@@ -62,6 +62,23 @@ namespace Application.TicketTypes
             return _mapper.Map<IEnumerable<TicketTypeResponseDto>>(ticketTypes);
         }
 
+        public async Task ReleaseReservedTickets(int ticketTypeId, int quantity)
+        {
+            if (ticketTypeId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(ticketTypeId), ticketTypeId, "Ticket Type id must be a positive integer.");
+
+            if (quantity <= 0)
+                throw new ArgumentOutOfRangeException(nameof(quantity), quantity, "Quantity must be a positive integer.");
+
+            var ticketType = await _repo.GetByIdAsync(ticketTypeId)
+                ?? throw new KeyNotFoundException($"Ticket Type with ID {ticketTypeId} does not exist.");
+
+            if (ticketType.AvailableQuantity + quantity > ticketType.Quantity)
+                throw new BusinessException($"Cannot release {quantity} tickets. It would exceed the total quantity of {ticketType.Quantity}.");
+
+            ticketType.AvailableQuantity += quantity;
+
+        }
 
         public async Task<bool> UpdateAsync(int id, UpdateTicketTypeDto updateTicketType)
         {

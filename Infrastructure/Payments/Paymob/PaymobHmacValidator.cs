@@ -1,10 +1,10 @@
 ﻿using Domain.Contracts;
-using Domain.Interfaces.Payment;
+using Domain.Interfaces.PaymentService;
 using Microsoft.Extensions.Options;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Application.Payment.Paymob
+namespace Application.Payments.Paymob
 {
     public class PaymobHmacValidator : IHmacValidator
     {

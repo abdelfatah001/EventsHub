@@ -4,32 +4,36 @@ using Domain.Interfaces;
 using Domain.Enums;
 using Domain.Exceptions;
 using Application.Carts;
+using Domain.Interfaces.PaymentService;
+using Domain.Contracts;
 
 
 namespace Application.Orders
 {
-    public class OrderService : IOrderService
+    public partial class OrderService : IOrderService
     {
         private readonly IOrderRepo _orderRepository;
         private readonly IOrderItemRepo _orderItemRepository;
         private readonly ITicketTypeRepo _ticketTypeRepository;
-        private readonly ITicketRepo _ticketRepository;
         private readonly ICartService _cartService;
         private readonly IUnitOfWork _unitOfWork;
 
         public OrderService(
             IOrderRepo orderRepository, IOrderItemRepo orderItemRepository,
-            ITicketTypeRepo ticketTypeRepository, ITicketRepo ticketRepository,
+            ITicketTypeRepo ticketTypeRepository,
             ICartService cartService, IUnitOfWork unitOfWork)
         {
             _orderRepository = orderRepository;
             _orderItemRepository = orderItemRepository;
             _ticketTypeRepository = ticketTypeRepository;
-            _ticketRepository = ticketRepository;
             _cartService = cartService;
             _unitOfWork = unitOfWork;
         }
-
+        /// <summary>
+        /// Creates an order from the user's active cart by reserving the requested
+        /// ticket inventory, creating the order items, calculating the total amount,
+        /// and marking the cart as ordered within a database transaction.
+        /// </summary>
         public async Task<Order> CreateOrderAsync(int userId)
         {
             var cart = await _cartService
@@ -99,6 +103,7 @@ namespace Application.Orders
                 throw;
             }
         }
+
     }
 
 }
