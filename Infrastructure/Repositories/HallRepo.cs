@@ -58,5 +58,17 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .AnyAsync(h => h.Id == hallId && h.IsActive);
         }
+
+        public async Task LockHallAsync(int hallId)
+        {
+            await _context.Halls
+                .FromSqlInterpolated(
+                $"""
+                Select * From Halls WITH(UPDLOCK, HOLDLOCK)
+                 WHERE Id = {hallId}
+                """)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
     }
 }

@@ -4,7 +4,7 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Interfaces;
-using System.Threading.Channels;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Application.EventOccurences
 {
@@ -13,12 +13,15 @@ namespace Application.EventOccurences
         private readonly IEventOccurenceRepo _occurenceRepo; 
         private readonly IEventRepo _eventRepo;
         private readonly IHallRepo _hallRepo;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public EventOccurenceService(IEventOccurenceRepo occurenceRepo, IEventRepo eventRepo, IHallRepo repo, IMapper mapper)
+        
+        public EventOccurenceService(IEventOccurenceRepo occurenceRepo, IEventRepo eventRepo, IHallRepo repo, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _occurenceRepo = occurenceRepo;
             _eventRepo = eventRepo;
             _hallRepo = repo;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
@@ -36,13 +39,35 @@ namespace Application.EventOccurences
             if (!await _hallRepo.IsActive(newOccurence.HallId))
                 throw new BusinessException($"Hall with Id {newOccurence.HallId} is not active");
 
-            if (!await _occurenceRepo.IsHallAvaliableAsync
-                (newOccurence.HallId, newOccurence.StartAt, newOccurence.EndAt))
-                throw new BusinessException($"Hall with Id {newOccurence.HallId} is not avaliable from {newOccurence.StartAt} to {newOccurence.EndAt}");
-            
-            var occurence = await _occurenceRepo.AddAsync(_mapper.Map<EventOccurence>(newOccurence));
+            await _unitOfWork.BeginTransactionAsync();
 
-            return _mapper.Map<OccurenceResponseDto>(occurence);
+            try
+            {
+                // Lock this hall
+                await _hallRepo.LockHallAsync(newOccurence.HallId);
+
+                // Now nobody else can make a scheduling decision
+                // for this hall until this transaction finishes.
+                var avaliable = await _occurenceRepo.IsHallAvaliableAsync
+                (newOccurence.HallId, newOccurence.StartAt, newOccurence.EndAt);
+
+                if (!avaliable)
+                    throw new BusinessException($"Hall with Id {newOccurence.HallId} is not avaliable from {newOccurence.StartAt} to {newOccurence.EndAt}");
+            
+                var occurence = await _occurenceRepo.AddAsync(_mapper.Map<EventOccurence>(newOccurence));
+
+                await _unitOfWork.SaveChangesAsync();
+
+                await _unitOfWork.CommitTransactionAsync();
+
+                return _mapper.Map<OccurenceResponseDto>(occurence);
+            }
+            catch
+            {
+                await _unitOfWork.RollbackTransactionAsync();   
+                throw;
+            }
+
         }
 
         public async Task<IEnumerable<OccurenceResponseDto>> GetAllAsync()

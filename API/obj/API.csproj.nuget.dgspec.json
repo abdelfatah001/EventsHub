@@ -190,6 +190,10 @@
               "target": "Package",
               "version": "[9.0.14, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.OpenApi": {
               "target": "Package",
               "version": "[1.6.17, )"

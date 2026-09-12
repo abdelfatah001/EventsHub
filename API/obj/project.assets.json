@@ -1133,6 +1133,7 @@
           "FluentValidation": "11.3.0",
           "FluentValidation.DependencyInjectionExtensions": "11.3.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.14",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.OpenApi": "1.6.17"
         },
         "compile": {

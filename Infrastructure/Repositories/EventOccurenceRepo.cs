@@ -86,6 +86,5 @@ namespace Infrastructure.Repositories
                 .AnyAsync(h => h.HallId == hallId && h.StartDate > now);
         }
 
-
     }
 }
