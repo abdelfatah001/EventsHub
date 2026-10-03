@@ -1,11 +1,12 @@
-﻿using Domain.Enums;
+﻿using Domain.Common;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 
 
 namespace Domain.Entities
 {
-    public class Order
+    public class Order : ICreatedAt
     {
         public int Id { get; set; }
 

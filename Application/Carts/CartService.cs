@@ -60,17 +60,8 @@ namespace Application.Carts
 
             await _repo.UpdateAsync(cart);
         }
-        /*
-        public Task UpdateTotalAmountAsync(int cartId, int totalAmount)
-        {
-            if (cartId <= 0)
-                throw new ArgumentOutOfRangeException("Cart Id must be a positive integer.");
 
-            if (totalAmount <= 0)
-                throw new ArgumentOutOfRangeException();
-
-
-
-        }*/
+        
+      
     }
 }

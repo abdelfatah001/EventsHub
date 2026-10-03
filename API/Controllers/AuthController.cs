@@ -1,0 +1,181 @@
+﻿using API.DTOs.Auth;
+using API.DTOs.Auth.Request;
+using API.DTOs.Auth.Response;
+using Application.Refresh_Token;
+using Application.Users;
+using Application.Users.Dto.Request;
+using Application.Vertification;
+using Domain.Entities;
+using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace API.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AuthController : ControllerBase
+    {
+        private readonly IUserService _userService;
+        private readonly JwtSettings _jwtSettings;
+        private readonly IRefreshTokenService _tokenService;
+        private readonly IVerificationService _verificationService;
+
+        public AuthController(IUserService userService, JwtSettings jwtSettings, IRefreshTokenService tokenService,
+            IVerificationService verificationService)
+        {
+            _userService = userService;
+            _jwtSettings = jwtSettings;
+            _tokenService = tokenService;
+            _verificationService = verificationService;
+        }
+
+        private static string GenerateRefreshToken()
+        {
+            var bytes = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+
+            rng.GetBytes(bytes);
+
+            return Convert.ToBase64String(bytes);
+        }
+
+        private async Task<TokenResponse> GenerateTokenReponse (User user)
+        {
+            var Claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
+            };
+
+            // convert key to bytes
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(_jwtSettings.Key));
+
+            // Hash key by HmacSha256
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
+                claims: Claims,
+                signingCredentials: creds);
+
+            var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            var strRefreshToken = GenerateRefreshToken();
+
+            var RefreshToken = new RefreshToken
+            {
+                UserId = user.Id,
+                TokenHash = BCrypt.Net.BCrypt.HashPassword(strRefreshToken),
+                ExpiresAt = DateTime.UtcNow.AddDays(7),
+                RevokedAt = null
+            };
+
+            RefreshToken.Id = await _tokenService.AddAsync(RefreshToken);
+
+            user.ActiveRefreshTokenId = RefreshToken.Id;    
+
+            return new TokenResponse
+            {
+                AccessToken = accessToken,
+                RefreshToken = strRefreshToken,
+            };
+
+        }
+
+        [HttpPost("createAccount")]
+        public async Task<IActionResult> CreateAccount([FromBody]AddUserDto userDto)
+        {
+            if (userDto.Role == Domain.Enums.enUserRole.Admin)
+                return BadRequest("Admin account can't be created");
+
+            var user = await _userService.AddUser(userDto);
+
+            await _verificationService.SendCodeAsync(user, Domain.Enums.enVerificationPurpose.EmailVerification);
+            
+            return Ok("New Account created successfully");
+        }
+
+        [HttpPost("login")]
+        [EnableRateLimiting("AuthLimiter")]
+        public async Task<IActionResult> Login([FromBody]LoginRequest request)
+        {
+            var user = await _userService.GetByEmailAsync(request.Email);
+
+            if (user == null)
+                return Unauthorized("Invalid credentials");
+
+            bool isValidPassword =
+                 BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
+
+            if (!isValidPassword)
+                return Unauthorized("Invalid Credentials");
+
+            return Ok(GenerateTokenReponse(user));
+
+        }
+
+
+        [HttpPost("refresh")]
+        [EnableRateLimiting("AuthLimiter")]
+        public async Task<IActionResult> Refresh([FromBody] MyRefreshRequest request)
+        {
+            var user = await _userService.GetByEmailAsync(request.Email);
+
+            if (user == null)
+                return Unauthorized("Invalid refresh token");
+
+            var refreshToken = await _tokenService.GetActiveTokenByUserIdAsync(user.Id);
+
+            if (refreshToken == null)
+                return Unauthorized($"Refresh token with Id {user.ActiveRefreshTokenId} is not existed.");
+
+            if (refreshToken.RevokedAt != null)
+                return Unauthorized("Refresh token is revoked");
+
+            if (refreshToken.ExpiresAt <= DateTime.UtcNow)
+                return Unauthorized("Invalid refresh token");
+
+            await _tokenService.RevokeAsync(refreshToken);
+
+            return Ok(GenerateTokenReponse(user));
+
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> LogOut([FromBody] LogoutRequest request)
+        {
+            var user = await _userService.GetByEmailAsync(request.Email);
+
+            if (user == null)
+                return Ok();
+
+            var RefreshToken = await _tokenService.GetActiveTokenByUserIdAsync(user.Id);
+
+            if (RefreshToken == null)
+                throw new ArgumentNullException($"Refresh token with Id {user.ActiveRefreshTokenId} is not existed.");
+
+            bool refreshValid = BCrypt.Net.BCrypt.Verify(
+                request.RefreshToken, RefreshToken.TokenHash);
+
+            if (!refreshValid)
+                return Ok();
+
+            await _tokenService.RevokeAsync(RefreshToken);
+
+            return Ok("Logged out successfully");
+        }
+
+
+    }
+}

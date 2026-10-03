@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Application.Users;
 using Application.Users.Dto.Request;
+using Application.ResetPasswordToken;
+using Application.Vertification;
 
 namespace API.Controllers
 {
@@ -10,10 +12,14 @@ namespace API.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IVerificationService _verificationService;
+        private readonly IPasswordResetTokenService _passwordResetService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IVerificationService verificationService, IPasswordResetTokenService passwordResetService)
         {
             _userService = userService;
+            _verificationService = verificationService;
+            _passwordResetService = passwordResetService;
         }
 
 
@@ -36,7 +42,7 @@ namespace API.Controllers
                 Ok(result) :
                 NotFound(new { message = $"User with ID {id} not found." });
         }
-        
+
         // everyone
         [HttpGet("/GetProfileById/{id}")]
         public async Task<IActionResult> GetUserProfileById(int id)
@@ -80,26 +86,43 @@ namespace API.Controllers
                  Ok(new { message = $"User profile with ID {id} updated successfully." }) :
                  BadRequest(new { message = $"Failed to update user profile with ID {id}." });
         }
-
+       
+        
         // owner user
         [HttpPut("/UpdateEmail/{id}")]
         public async Task<IActionResult> UpdateEmail(int id, [FromBody] UpdateEmailDto updateEmail)
         {
-            var result = await _userService.UpdateEmailAsync(id, updateEmail);
-            return result ?
-                 Ok(new { message = $"User email with ID {id} updated successfully." }) :
-                 BadRequest(new { message = $"Failed to update user email with ID {id}." });
+            await _userService.UpdateEmailAsync(id, updateEmail);
+
+            return Ok(new { message = $"User email with ID {id} updated successfully." });
+        }
+        
+        // owner user
+        [HttpPost("password-reset-request")]
+        public async Task<IActionResult> PasswordResetRequest(int userId)
+        {
+            if (userId <= 0)
+                return BadRequest(new { message = "Invalid user ID." });
+
+            var user = await _userService.GetUserByIdAsync(userId);
+
+            if (user == null)
+                return NotFound(new { message = $"User with ID {userId} not found." });
+
+            await _verificationService.SendCodeAsync(user, Domain.Enums.enVerificationPurpose.PasswordReset);
+
+            return Ok(new { message = $"Password reset code sent to user with ID {userId}." });
         }
 
-        // owner user
-        [HttpPut("/UpdatePassword/{id}")]
-        public async Task<IActionResult> UpdatePassword(int id, [FromBody] UpdatePasswordDto updatePassword)
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
         {
-            var result = await _userService.UpdatePasswordAsync(id, updatePassword);
-            return result ?
-                 Ok(new { message = $"User password with ID {id} updated successfully." }) :
-                 BadRequest(new { message = $"Failed to update user password with ID {id}." });
+            if (dto == null)
+                return BadRequest("Request cannot be null.");
 
+            await _userService.ResetPassword(dto);
+
+            return Ok(new { message = $"Password reset successfully for user with ID {dto.UserId}." });
         }
     }
 }

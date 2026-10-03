@@ -96,3 +96,14 @@ D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\EventsHub\EventsHub\API\bin\Debug\net9.0\AutoMapper.dll
 D:\EventsHub\EventsHub\API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\EventsHub\EventsHub\API\obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Http.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\EventsHub\EventsHub\API\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll

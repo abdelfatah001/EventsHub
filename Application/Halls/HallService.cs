@@ -25,7 +25,7 @@ namespace Application.Halls
                 throw new ArgumentNullException(nameof(Hall), "Hall payload cannot be null.");
 
 
-            var hall = await _hallRepo.AddAsync(_mapper.Map<Dto>(Hall));
+            var hall = await _hallRepo.AddAsync(_mapper.Map<Hall>(Hall));
 
             return _mapper.Map<HallResponseDto?>(hall);
         }

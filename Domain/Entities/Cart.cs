@@ -1,8 +1,9 @@
-﻿using Domain.Enums;
+﻿using Domain.Common;
+using Domain.Enums;
 
 namespace Domain.Entities
 {
-    public class Cart
+    public class Cart : IAuditable
     {
         public int Id { get; set; }
 
@@ -13,7 +14,7 @@ namespace Domain.Entities
         public enCartStatus Status { get; set; }
 
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
 
         public ICollection<CartItem> CartItems { get; set; } = null!;

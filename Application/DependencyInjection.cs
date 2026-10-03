@@ -1,12 +1,8 @@
-﻿using Application.EventOccurences.Email;
-using Application.EventOccurences.User.Request;
-using Application.Email;
+﻿using Application.Email;
 using Application.EventCategories;
 using Application.EventOccurences;
 using Application.Events;
-using Application.Mappers;
 using Application.Users;
-using Domain.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 

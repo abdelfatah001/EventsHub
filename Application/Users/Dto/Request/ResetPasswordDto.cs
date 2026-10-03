@@ -1,8 +1,9 @@
 ﻿namespace Application.Users.Dto.Request
 {
-    public class ForgetPasswordDto
+    public class ResetPasswordDto
     {
-        public string Email { get; set; } = null!;
+        public int UserId { get; set; } 
+        public string ResetToken { get; set; } = null!;
         public string Password { get; set; } = null!;
         public string ConfirmPassword { get; set; } = null!;
     }

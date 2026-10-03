@@ -1,11 +1,12 @@
-﻿using Domain.Enums;
+﻿using Domain.Common;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 
 
 namespace Domain.Entities
 {
-    public class EventOccurence
+    public class EventOccurence : IAuditable
     {
         public int Id { get; set; }
 
@@ -21,7 +22,7 @@ namespace Domain.Entities
         public enEventStatus Status { get; set; }   
 
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public ICollection<TicketType> TicketTypes { get; set; } 
             = new List<TicketType>();

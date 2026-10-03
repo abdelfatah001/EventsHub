@@ -9,7 +9,6 @@ namespace Application.Carts
         Task<Cart?> GetCurrentCartByUserIdAsync(int userId);
         Task MarkCartAsOrdered (int cartId);
 
-        Task UpdateTotalAmountAsync (int cartId, int totalAmount);
 
     }
 }

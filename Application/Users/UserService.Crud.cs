@@ -1,20 +1,49 @@
-﻿using Application.Users.Dto.Request;
+﻿using Application.ResetPasswordToken;
+using Application.Users.Dto.Request;
 using Application.Users.Dto.Response;
+using Application.Vertification;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;
 
+
 namespace Application.Users
 {
-    public class UserService : IUserService
+    public partial class UserService : IUserService
     {
         private readonly IUserRepo _userRepo;
-
         private readonly IMapper _mapper;
-        public UserService(IUserRepo userRepo, IMapper mapper)
+        private readonly IPasswordResetTokenService _resetTokenService;
+        private readonly VerificationService _verificationService;
+
+        public UserService(IUserRepo userRepo, IMapper mapper,
+            VerificationService verificationService, IPasswordResetTokenService resetTokenService)
         {
             _userRepo = userRepo;
             _mapper = mapper;
+            _verificationService = verificationService;
+            _resetTokenService = resetTokenService;
+        }
+
+        public async Task<User?> AddUser(AddUserDto userDto)
+        {
+            if (userDto == null)
+                throw new ArgumentNullException("User paypol can't be null");
+
+            var user = new User
+            {
+                FirstName = userDto.FirstName,
+                LastName = userDto.LastName,
+                Email = userDto.Email,
+                Phone = userDto.Phone,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password),
+                Role = userDto.Role,
+                IsActive = true,
+                CurrentCart = null,
+                ActiveRefreshTokenId = null
+            };
+
+            return await _userRepo.AddAsync(user);
         }
 
         public async Task<bool> ActivateUserAsync(int id)
@@ -70,6 +99,17 @@ namespace Application.Users
 
             return _mapper.Map<UserDetailedResponseDto?>(user);
         }
+
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            if (email is null)
+                throw new ArgumentNullException(nameof(email), "Password update payload cannot be null.");
+
+            var user = await _userRepo.GetByEmailAsync(email);
+
+            return user;
+        }
+
         public async Task<UserResponseDto?> GetProfileByIdAsync(int id)
         {
             if (id <= 0)
@@ -80,50 +120,6 @@ namespace Application.Users
             return _mapper.Map<UserResponseDto?>(user);
         }
 
-        public async Task<bool> UpdateEmailAsync(int id, UpdateEmailDto emailDto)
-        {
-            if (id <= 0)
-                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
-
-            if (emailDto is null)
-                throw new ArgumentNullException(nameof(emailDto), "Email update payload cannot be null.");
-
-            var user = await _userRepo.GetByIdAsync(id);
-
-            if (user is null)
-                throw new KeyNotFoundException($"User with ID {id} does not exist.");
-
-            if (await _userRepo.ExistsByEmailAsync(emailDto.NewEmail))
-                throw new ArgumentException("A user with the same email already exists.", nameof(emailDto.NewEmail));
-
-            // This is a placeholder for the email verification logic.
-
-            user.Email = emailDto.NewEmail;
-
-            return await _userRepo.UpdateAsync(user);
-
-        }
-
-        public async Task<bool> UpdatePasswordAsync(int id, UpdatePasswordDto passwordDto)
-        {
-            if (id <= 0)
-                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
-
-            if (passwordDto is null)
-                throw new ArgumentNullException(nameof(passwordDto), "Password update payload cannot be null.");
-
-            var user = await _userRepo.GetByIdAsync(id);
-
-            if (user is null)
-                throw new KeyNotFoundException($"User with ID {id} does not exist.");
-
-            if (!BCrypt.Net.BCrypt.Verify(passwordDto.CurrentPassword, user.PasswordHash))
-                throw new ArgumentException("Current password is incorrect.", nameof(passwordDto.CurrentPassword));
-
-            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(passwordDto.NewPassword);
-
-            return await _userRepo.UpdateAsync(user);
-        }
 
         public async Task<bool> UpdateProfileAsync(int id, UpdateProfileDto profileDto)
         {
@@ -143,6 +139,36 @@ namespace Application.Users
             user.Phone = profileDto.PhoneNumber;
 
             return await _userRepo.UpdateAsync(user);
+        }
+
+        public async Task<User?> GetUserByIdAsync(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
+
+            var user = await _userRepo.GetByIdAsync(id);
+
+            return user;
+        }
+
+        public async Task UpdateEmailAsync(int id, UpdateEmailDto updateEmail)
+        {
+            if (id <= 0)
+                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
+
+            if (updateEmail is null)
+                throw new ArgumentNullException(nameof(updateEmail), "Email update payload cannot be null.");
+
+            var user = await _userRepo.GetByIdAsync(id);
+
+            if (user is null)
+                throw new KeyNotFoundException($"User with ID {id} does not exist.");
+
+            user.Email = updateEmail.NewEmail;
+            user.IsEmailVerified = false; // Reset email verification status
+
+            await _userRepo.UpdateAsync(user);
+
         }
     }
 }

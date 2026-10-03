@@ -1,6 +1,8 @@
 using FluentValidation.AspNetCore;
 using Application;
 using Infrastructure;
+using API.Extensions;
+using API.DTOs.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +15,15 @@ builder.Services.AddFluentValidationClientsideAdapters();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.Configure<JwtSettings>(
+    builder.Configuration.GetSection("Jwt"));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCorsPolicy();
+builder.Services.AddRateLimiting();
+builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
@@ -28,7 +36,9 @@ if (app.Environment.IsDevelopment())
 app.UseExceptionHandler("/error");
 
 app.UseHttpsRedirection();
-
+app.UseCors("EventsHubCorsPolicy");
+app.UseRateLimiter();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -1,10 +1,11 @@
 ﻿
+using Domain.Common;
 using Domain.Enums;
 using System;
 
 namespace Domain.Entities
 {
-    public class Payment
+    public class Payment : ICreatedAt
     {
         public int Id { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.Common;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.DbContexts
@@ -21,21 +22,29 @@ namespace Infrastructure.DbContexts
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<CartItem> CartItems { get; set; }
+        public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
+        public virtual DbSet<VertificationCode> VertificationCodes { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         { // to add the date of CreatedAt and UpdatedAt by sql
 
-            foreach (var entry in ChangeTracker.Entries<User>())
+            foreach (var entry in ChangeTracker.Entries<IAuditable>())
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Entity.CreatedAt = DateTime.Now;
-                    entry.Entity.UpdatedAt = DateTime.Now;
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
                 }
                 else if (entry.State == EntityState.Modified)
                 {
-                    entry.Entity.UpdatedAt = DateTime.Now;
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
                 }
+            }
+
+            foreach (var entry in ChangeTracker.Entries<ICreatedAt>())
+            {
+                if (entry.State == EntityState.Added)
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
             }
 
             return base.SaveChangesAsync(cancellationToken);

@@ -18,11 +18,6 @@ namespace Application.TicketTypes.Dto.Request
                     .NotEmpty().WithMessage("Quantity is required.")
                         .GreaterThan(0).WithMessage("Quantity must be positive integer");
 
-            RuleFor(x => x.AvaliableQuantity)
-                    .NotEmpty().WithMessage("Avaliable Quantity is required.")
-                        .GreaterThan(0).WithMessage("Avaliable Quantity must be positive integer")
-                        .LessThanOrEqualTo(x => x.Quantity).WithMessage("Avaliable Quantity must be smaller than Quantity");
-
         }
     }
 }

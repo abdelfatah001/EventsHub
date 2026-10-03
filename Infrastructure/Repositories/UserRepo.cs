@@ -64,5 +64,14 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .AnyAsync(u => u.Phone == phone);
         }
+
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            ArgumentException.ThrowIfNullOrWhiteSpace(email, nameof(email));
+
+            return await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Email == email);
+        }
     }
 }

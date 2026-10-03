@@ -2,13 +2,13 @@
 
 namespace Application.Users.Dto.Request
 {
-    public class ForgotPasswordDtoValidator : AbstractValidator<ForgetPasswordDto>
+    public class ResetPasswordDtoValidator : AbstractValidator<ResetPasswordDto>
     {
-        public ForgotPasswordDtoValidator()
+        public ResetPasswordDtoValidator()
         {
-            RuleFor(x => x.Email)
-                .NotEmpty().WithMessage("Email is required.")
-                .EmailAddress().WithMessage("Invalid email format.");
+
+            RuleFor(x => x.ResetToken)
+                .NotEmpty().WithMessage("Reset token is required.");
 
             RuleFor(x => x.Password)
                 .NotEmpty().WithMessage("Password is required.")

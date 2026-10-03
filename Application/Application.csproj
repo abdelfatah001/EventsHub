@@ -27,4 +27,8 @@
     <Folder Include="Tickets\Dto\Request\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Users\UserService.Verification.cs" />
+  </ItemGroup>
+
 </Project>

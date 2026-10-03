@@ -11,6 +11,8 @@ namespace Application.Users
     public interface IUserService
     {
 
+        Task<User?> AddUser(AddUserDto user);
+
         /// <summary>
         /// Retrieves all users with detailed information.
         /// </summary>
@@ -33,6 +35,8 @@ namespace Application.Users
         /// (for example: roles, permissions, audit metadata). Use with appropriate authorization checks.
         /// </returns>
         Task<UserDetailedResponseDto?> GetByIdAsync(int id);
+        Task<User?> GetUserByIdAsync(int id);
+        Task<User?> GetByEmailAsync(string email);
 
         /// <summary>
         /// Retrieves the public profile information for a user by identifier.
@@ -57,25 +61,11 @@ namespace Application.Users
         /// </returns>
         Task<bool> UpdateProfileAsync(int id, UpdateProfileDto updateProfile);
 
-        /// <summary>
-        /// Updates the email address for the specified user.
-        /// </summary>
-        /// <param name="id">The identifier of the user whose email will be updated.</param>
-        /// <param name="updateEmail">The DTO containing the new email and any verification details.</param>
-        /// <returns>
-        /// True if the email update succeeded; otherwise false.
-        /// </returns>
-        Task<bool> UpdateEmailAsync(int id, UpdateEmailDto updateEmail);
 
-        /// <summary>
-        /// Updates the password for the specified user.
-        /// </summary>
-        /// <param name="id">The identifier of the user whose password will be changed.</param>
-        /// <param name="updatePassword">The DTO containing the current and new password information.</param>
-        /// <returns>
-        /// True if the password update succeeded; otherwise false.
-        /// </returns>
-        Task<bool> UpdatePasswordAsync(int id, UpdatePasswordDto updatePassword);
+        Task UpdateEmailAsync(int id, UpdateEmailDto updateEmail);
+
+        Task PasswordResetRequest(int userId);
+        Task ResetPassword(ResetPasswordDto dto);
 
         /// <summary>
         /// Activates the specified user account.
