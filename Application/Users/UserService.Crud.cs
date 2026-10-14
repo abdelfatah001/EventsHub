@@ -14,10 +14,10 @@ namespace Application.Users
         private readonly IUserRepo _userRepo;
         private readonly IMapper _mapper;
         private readonly IPasswordResetTokenService _resetTokenService;
-        private readonly VerificationService _verificationService;
+        private readonly IVerificationService _verificationService;
 
         public UserService(IUserRepo userRepo, IMapper mapper,
-            VerificationService verificationService, IPasswordResetTokenService resetTokenService)
+            IVerificationService verificationService, IPasswordResetTokenService resetTokenService)
         {
             _userRepo = userRepo;
             _mapper = mapper;

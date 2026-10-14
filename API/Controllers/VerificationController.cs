@@ -1,11 +1,13 @@
 ﻿using API.DTOs.Auth.Request;
 using Application.Vertification;
 using Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+
     [ApiController]
     [Route("api/[controller]")]
     public class VerificationController : ControllerBase

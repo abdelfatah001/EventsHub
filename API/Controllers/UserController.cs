@@ -3,10 +3,11 @@ using Application.Users;
 using Application.Users.Dto.Request;
 using Application.ResetPasswordToken;
 using Application.Vertification;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -24,7 +25,7 @@ namespace API.Controllers
 
 
 
-        // admin
+        [Authorize(Roles = "Admin")]
         [HttpGet("/GetAll")]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -32,7 +33,7 @@ namespace API.Controllers
             return Ok(result);
         }
 
-        // admin
+        [Authorize(Roles = "Admin")]
         [HttpGet("/GetById/{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
@@ -43,7 +44,7 @@ namespace API.Controllers
                 NotFound(new { message = $"User with ID {id} not found." });
         }
 
-        // everyone
+
         [HttpGet("/GetProfileById/{id}")]
         public async Task<IActionResult> GetUserProfileById(int id)
         {
@@ -54,7 +55,7 @@ namespace API.Controllers
                 NotFound(new { message = $"User with ID {id} not found." });
         }
 
-        // admin
+        [Authorize(Roles = "Admin")]
         [HttpPut("/Activate/{id}")]
         public async Task<IActionResult> ActivateUser(int id)
         {
@@ -65,7 +66,7 @@ namespace API.Controllers
                  BadRequest(new { message = $"Failed to activate user with ID {id}." });
         }
 
-        // admin
+        [Authorize(Roles = "Admin")]
         [HttpPut("/Deactivate/{id}")]
         public async Task<IActionResult> DeactivateUser(int id)
         {

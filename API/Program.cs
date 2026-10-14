@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCorsPolicy();
 builder.Services.AddRateLimiting();
-builder.Services.AddAuthentication();
+builder.Services.AddAuthenticationPolicy(builder.Configuration);
 
 var app = builder.Build();
 

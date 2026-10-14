@@ -4,9 +4,11 @@ using Application.EventCategories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class EventsCategoriesController : ControllerBase
@@ -19,6 +21,7 @@ namespace API.Controllers
         }
 
         // GET: api/EventsCategories
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -28,6 +31,7 @@ namespace API.Controllers
         }
 
         // GET: api/EventsCategories/{id}
+        [Authorize]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<CategoryResponseDto>> GetById(int id)
         {
@@ -39,6 +43,7 @@ namespace API.Controllers
         }
 
         // POST: api/EventsCategories
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<CategoryResponseDto>> Add([FromBody] CategoryRequestDto dto)
         {
@@ -50,6 +55,7 @@ namespace API.Controllers
         }
 
         // PUT: api/EventsCategories/{id}
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] CategoryRequestDto dto)
         {

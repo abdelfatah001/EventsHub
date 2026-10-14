@@ -5,7 +5,7 @@ namespace API.Extensions
 {
     public static partial class Extensions
     {
-        public static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddAuthenticationPolicy(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("Jwt").Get<JwtSettings>();
 
@@ -38,6 +38,7 @@ namespace API.Extensions
 
                 };
             });
+
             return services;
         }
     }

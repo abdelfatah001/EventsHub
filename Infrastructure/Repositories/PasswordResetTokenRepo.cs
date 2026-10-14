@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class PaswordResetTokenRepo : IPasswordResetTokenRepo
+    public class PasswordResetTokenRepo : IPasswordResetTokenRepo
     {
         private readonly AppDbContext _context;
 
-        public PaswordResetTokenRepo(AppDbContext context)
+        public PasswordResetTokenRepo(AppDbContext context)
         {
             _context = context;
         }

@@ -2,8 +2,13 @@
 using Application.EventCategories;
 using Application.EventOccurences;
 using Application.Events;
+using Application.ResetPasswordToken;
 using Application.Users;
+using Application.Vertification;
+using Domain.Entities;
+using Domain.Interfaces;
 using FluentValidation;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
@@ -18,7 +23,10 @@ namespace Application
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IEventOccurenceService, EventOccurenceService>();
-
+            services.AddScoped<IVerificationService, VerificationService>();
+            services.AddScoped<VerificationEmailBuilder>();
+            services.AddScoped<IPasswordResetTokenService, PasswordResetTokenService>();
+            services.AddScoped<IPasswordHasher<VertificationCode>, PasswordHasher<VertificationCode>>();
             // Add FluentValidation validators
 
             services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyMarker>();

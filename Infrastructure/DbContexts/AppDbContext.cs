@@ -10,6 +10,7 @@ namespace Infrastructure.DbContexts
         { }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Organizer> Organizers { get; set; }
         public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<EventCategory> EventCategories { get; set; }

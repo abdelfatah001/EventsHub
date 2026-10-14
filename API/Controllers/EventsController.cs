@@ -1,11 +1,13 @@
 ﻿using Application.Events;
 using Application.Events.Dto.Request;
 using Application.Events.Dto.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class EventsController : ControllerBase
@@ -15,8 +17,9 @@ namespace API.Controllers
         {
             _service = service;
         }
-   
+
         // POST: api/events
+        [Authorize (Roles = "Organizer")]
         [HttpPost]
         public async Task<ActionResult<EventResponseDto>> Add([FromBody] AddEventDto newObject)
         {
@@ -29,6 +32,7 @@ namespace API.Controllers
         }
 
         // GET: api/events
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetAll()
         {
@@ -38,6 +42,7 @@ namespace API.Controllers
         }
 
         // GET: api/events/{id}
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<EventResponseDto>> GetById(int id)
         {
@@ -49,6 +54,7 @@ namespace API.Controllers
         }
 
         // GET: api/events/organizer/{organizerId}
+        [Authorize(Roles = "Admin,Organizer")]
         [HttpGet("organizer/{organizerId}")]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetByOrganizer(int organizerId)
         {
@@ -58,6 +64,7 @@ namespace API.Controllers
         }
 
         // GET: api/events/category/{categoryId}
+        [Authorize]
         [HttpGet("category/{categoryId}")]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetByCategory(int categoryId)
         {
@@ -67,6 +74,7 @@ namespace API.Controllers
         }
 
         // PUT: api/events/{id}
+        [Authorize(Roles = "Organizer")]
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] UpdateEventDto updatedObject)
         {
@@ -79,6 +87,7 @@ namespace API.Controllers
         }
 
         // DELETE: api/events/{id}
+        [Authorize(Roles = "Admin,Organizer")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {

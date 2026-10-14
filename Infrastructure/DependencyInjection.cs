@@ -40,6 +40,11 @@ namespace Infrastructure
             services.AddScoped<IEventRepo, EventRepo>();
             services.AddScoped<IEventCategoryRepo, EventCategoryRepo>();
             services.AddScoped<IEventOccurenceRepo, EventOccurenceRepo>();
+            services.AddScoped<IHallRepo, HallRepo>();
+            services.AddScoped<IVerificationCodeRepo, VerificationCodeRepo>();
+            services.AddScoped<IPasswordResetTokenRepo, PasswordResetTokenRepo>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             return services;
         }
     }

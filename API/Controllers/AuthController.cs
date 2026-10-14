@@ -6,6 +6,7 @@ using Application.Users;
 using Application.Users.Dto.Request;
 using Application.Vertification;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -19,6 +20,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
@@ -93,7 +95,9 @@ namespace API.Controllers
 
         }
 
+        [AllowAnonymous]
         [HttpPost("createAccount")]
+        [EnableRateLimiting("AuthLimiter")]
         public async Task<IActionResult> CreateAccount([FromBody]AddUserDto userDto)
         {
             if (userDto.Role == Domain.Enums.enUserRole.Admin)
@@ -106,6 +110,7 @@ namespace API.Controllers
             return Ok("New Account created successfully");
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         [EnableRateLimiting("AuthLimiter")]
         public async Task<IActionResult> Login([FromBody]LoginRequest request)
