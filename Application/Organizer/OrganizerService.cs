@@ -37,13 +37,15 @@ namespace Application.Organizers
             if (organizerDto == null)
                 throw new ArgumentNullException("Organizer paypol can't be null");
 
-       
+            organizerDto.userDto.IsOrganizer = true;
+            organizerDto.userDto.Role = Domain.Enums.enUserRole.Organizer;
+
             var user = await _userService.AddUser(organizerDto.userDto);
 
             if (user == null)
                 throw new BusinessException("Failed to add organizer's user");
 
-            user.IsOrganizer = true;
+            
 
             var organizer = new Organizer
             {
@@ -113,7 +115,7 @@ namespace Application.Organizers
             var organizer = await _organizerRepo.GetByIdAsync(id);
 
             if (organizer == null)
-                ArgumentNullException.ThrowIfNull(organizer, $"There is no Organizer with Id {id}");
+                throw new KeyNotFoundException($"Orgnaizer with Id {id} does not exist");
 
             await _userService.PasswordResetRequest(organizer.UserId);
         }
@@ -128,7 +130,7 @@ namespace Application.Organizers
             var organizer = await _organizerRepo.GetByIdAsync(id);
 
             if (organizer == null)
-                ArgumentNullException.ThrowIfNull(organizer, $"There is no Organizer with Id {id}");
+                throw new KeyNotFoundException($"Orgnaizer with Id {id} does not exist");
 
             await _userService.UpdateEmailAsync(organizer.UserId, updateEmail);
         }
@@ -158,7 +160,7 @@ namespace Application.Organizers
             var organizer = await _organizerRepo.GetByIdAsync(id);
 
             if (organizer == null)
-                ArgumentNullException.ThrowIfNull(organizer, $"There is no Organizer with Id {id}");
+                throw new KeyNotFoundException($"Orgnaizer with Id {id} does not exist");
 
             return await _userService.UpdateProfileAsync(organizer.UserId, updateProfile);
         }

@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "D:\\EventsHub\\EventsHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\userservice.crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\userservice.crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\userservice.verification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\userservice.verification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\eventscategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\eventscategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\userservice.crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\userservice.crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\organizer\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\organizer\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\dto\\request\\addadmindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\dto\\request\\addadmindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\dto\\request\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\dto\\request\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\organizer\\dto\\request\\addorganizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\organizer\\dto\\request\\addorganizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\organizer\\iorganizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\organizer\\iorganizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\userservice.verification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\userservice.verification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\interfaces\\iorganizerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,16 +71,8 @@
       "RelativeMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\organizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\organizer\\dto\\request\\addorganizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\organizer\\dto\\request\\addorganizerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\refresh token\\irefreshtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\refresh token\\irefreshtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\users\\dto\\request\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|solutionrelative:application\\users\\dto\\request\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{522CC2C0-EA4C-49C6-AC0A-7F0CD8947620}|Domain\\Domain.csproj|d:\\eventshub\\eventshub\\domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,16 +131,8 @@
       "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\eventscategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\eventscategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|d:\\eventshub\\eventshub\\api\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB2BD44-D159-42F1-94C2-55F2266DD76A}|API\\API.csproj|solutionrelative:api\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33378240-3CBD-411A-B29F-5906F0135431}|Application\\Application.csproj|d:\\eventshub\\eventshub\\application\\vertification\\iverificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -473,35 +481,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 348,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAAJ0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-21T07:53:51.611Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrganizerService.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\OrganizerService.cs",
-              "RelativeDocumentMoniker": "Application\\Organizer\\OrganizerService.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\OrganizerService.cs",
-              "RelativeToolTip": "Application\\Organizer\\OrganizerService.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAhwHoAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T07:37:46.879Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -520,130 +501,143 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrganizerController.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\OrganizerController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\OrganizerController.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\OrganizerController.cs",
-              "RelativeToolTip": "API\\Controllers\\OrganizerController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAHwAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "API\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T07:29:24.645Z",
+              "WhenOpened": "2026-10-16T08:31:35.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAGwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T08:12:47.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\ErrorController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ErrorController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\ErrorController.cs",
+              "RelativeToolTip": "API\\Controllers\\ErrorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T09:45:53.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IOrganizerService.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\IOrganizerService.cs",
-              "RelativeDocumentMoniker": "Application\\Organizer\\IOrganizerService.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\IOrganizerService.cs",
-              "RelativeToolTip": "Application\\Organizer\\IOrganizerService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwBkAAAANAAAAAAAAAA==",
+              "Title": "EventsCategoriesController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EventsCategoriesController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\EventsCategoriesController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EventsCategoriesController.cs",
+              "RelativeToolTip": "API\\Controllers\\EventsCategoriesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T10:46:22.389Z",
+              "WhenOpened": "2026-09-11T16:16:27.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\IUserService.cs",
               "RelativeDocumentMoniker": "Application\\Users\\IUserService.cs",
               "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\IUserService.cs",
               "RelativeToolTip": "Application\\Users\\IUserService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAAEAAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-11T10:55:20.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.Verification.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Verification.cs",
-              "RelativeDocumentMoniker": "Application\\Users\\UserService.Verification.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Verification.cs",
-              "RelativeToolTip": "Application\\Users\\UserService.Verification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-20T06:20:30.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "UserService.Crud.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Crud.cs",
               "RelativeDocumentMoniker": "Application\\Users\\UserService.Crud.cs",
               "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Crud.cs",
               "RelativeToolTip": "Application\\Users\\UserService.Crud.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAFkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAADUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-14T06:07:18.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IOrganizerRepo.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrganizerRepo.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrganizerRepo.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrganizerRepo.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\IOrganizerRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "OrganizerService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\OrganizerService.cs",
+              "RelativeDocumentMoniker": "Application\\Organizer\\OrganizerService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\OrganizerService.cs",
+              "RelativeToolTip": "Application\\Organizer\\OrganizerService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T10:31:24.902Z",
+              "WhenOpened": "2026-10-16T07:37:46.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddAdminDto.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddAdminDto.cs",
+              "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\AddAdminDto.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddAdminDto.cs",
+              "RelativeToolTip": "Application\\Users\\Dto\\Request\\AddAdminDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T08:38:47.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "OrganizerRepo.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrganizerRepo.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrganizerRepo.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrganizerRepo.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\OrganizerRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Title": "AddUserDto.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddUserDto.cs",
+              "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\AddUserDto.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddUserDto.cs",
+              "RelativeToolTip": "Application\\Users\\Dto\\Request\\AddUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T06:56:46.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "VerificationController.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\VerificationController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\VerificationController.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\VerificationController.cs",
-              "RelativeToolTip": "API\\Controllers\\VerificationController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T07:22:18.338Z",
+              "WhenOpened": "2026-10-16T06:51:36.918Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Organizer.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Organizer.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Organizer.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Organizer.cs",
-              "RelativeToolTip": "Domain\\Entities\\Organizer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Title": "IOrganizerService.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\IOrganizerService.cs",
+              "RelativeDocumentMoniker": "Application\\Organizer\\IOrganizerService.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\IOrganizerService.cs",
+              "RelativeToolTip": "Application\\Organizer\\IOrganizerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T10:19:28.826Z",
+              "WhenOpened": "2026-10-11T10:46:22.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "AddOrganizerDto.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\Dto\\Request\\AddOrganizerDto.cs",
               "RelativeDocumentMoniker": "Application\\Organizer\\Dto\\Request\\AddOrganizerDto.cs",
               "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\Dto\\Request\\AddOrganizerDto.cs",
               "RelativeToolTip": "Application\\Organizer\\Dto\\Request\\AddOrganizerDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-11T10:56:42.541Z",
               "EditorCaption": ""
@@ -651,6 +645,82 @@
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "OrganizerController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\OrganizerController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\OrganizerController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\OrganizerController.cs",
+              "RelativeToolTip": "API\\Controllers\\OrganizerController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAHwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T07:29:24.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserService.Verification.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Verification.cs",
+              "RelativeDocumentMoniker": "Application\\Users\\UserService.Verification.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserService.Verification.cs",
+              "RelativeToolTip": "Application\\Users\\UserService.Verification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-20T06:20:30.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IOrganizerRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrganizerRepo.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrganizerRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrganizerRepo.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IOrganizerRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:31:24.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrganizerRepo.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrganizerRepo.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrganizerRepo.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrganizerRepo.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\OrganizerRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T06:56:46.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VerificationController.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\VerificationController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\VerificationController.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\VerificationController.cs",
+              "RelativeToolTip": "API\\Controllers\\VerificationController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T07:22:18.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Organizer.cs",
+              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Organizer.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Organizer.cs",
+              "ToolTip": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Organizer.cs",
+              "RelativeToolTip": "Domain\\Entities\\Organizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-11T10:19:28.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "IRefreshTokenService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Refresh Token\\IRefreshTokenService.cs",
               "RelativeDocumentMoniker": "Application\\Refresh Token\\IRefreshTokenService.cs",
@@ -658,25 +728,11 @@
               "RelativeToolTip": "Application\\Refresh Token\\IRefreshTokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-27T05:18:26.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T05:18:26.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AddUserDto.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddUserDto.cs",
-              "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\AddUserDto.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddUserDto.cs",
-              "RelativeToolTip": "Application\\Users\\Dto\\Request\\AddUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T06:51:36.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "UserRole.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\UserRole.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\UserRole.cs",
@@ -684,12 +740,11 @@
               "RelativeToolTip": "Domain\\Enums\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T09:40:31.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-11T09:40:31.164Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "UpdateOrganizerProfileDto.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Organizer\\Dto\\Request\\UpdateOrganizerProfileDto.cs",
               "RelativeDocumentMoniker": "Application\\Organizer\\Dto\\Request\\UpdateOrganizerProfileDto.cs",
@@ -701,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "BusinessException.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Exceptions\\BusinessException.cs",
               "RelativeDocumentMoniker": "Domain\\Exceptions\\BusinessException.cs",
@@ -713,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "UserProfile.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\UserProfile.cs",
               "RelativeDocumentMoniker": "Application\\Users\\UserProfile.cs",
@@ -721,12 +776,11 @@
               "RelativeToolTip": "Application\\Users\\UserProfile.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-11T16:09:37.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-11T16:09:37.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "VerificationService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Vertification\\VerificationService.cs",
               "RelativeDocumentMoniker": "Application\\Vertification\\VerificationService.cs",
@@ -734,12 +788,11 @@
               "RelativeToolTip": "Application\\Vertification\\VerificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T06:22:56.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T06:22:56.977Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
@@ -747,12 +800,11 @@
               "RelativeToolTip": "Domain\\Entities\\User.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAA0wB8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-21T08:09:17.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-21T08:09:17.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "PasswordResetToken.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\PasswordResetToken.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\PasswordResetToken.cs",
@@ -764,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Event.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Event.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Event.cs",
@@ -776,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "OrganizerConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrganizerConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\OrganizerConfig.cs",
@@ -788,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "IUserRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IUserRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IUserRepo.cs",
@@ -800,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "OrderConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\OrderConfig.cs",
@@ -812,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "OrderItemConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\OrderItemConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\OrderItemConfig.cs",
@@ -824,7 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "EmailController.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\EmailController.cs",
@@ -836,7 +888,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\DbContexts\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DbContexts\\AppDbContext.cs",
@@ -848,19 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "EventsCategoriesController.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EventsCategoriesController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\EventsCategoriesController.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EventsCategoriesController.cs",
-              "RelativeToolTip": "API\\Controllers\\EventsCategoriesController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAACEAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-11T16:16:27.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "EventsController.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\EventsController.cs",
@@ -872,19 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ErrorController.cs",
-              "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Controllers\\ErrorController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ErrorController.cs",
-              "ToolTip": "D:\\EventsHub\\EventsHub\\API\\Controllers\\ErrorController.cs",
-              "RelativeToolTip": "API\\Controllers\\ErrorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T09:45:53.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "IVerificationService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Vertification\\IVerificationService.cs",
               "RelativeDocumentMoniker": "Application\\Vertification\\IVerificationService.cs",
@@ -896,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "EventRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\EventRepo.cs",
@@ -908,7 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "PaymobIntentService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Payments\\PaymobIntentService.cs",
               "RelativeDocumentMoniker": "Application\\Payments\\PaymobIntentService.cs",
@@ -920,7 +948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "RateLimitingExtensions.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Extensions\\RateLimitingExtensions.cs",
               "RelativeDocumentMoniker": "API\\Extensions\\RateLimitingExtensions.cs",
@@ -932,7 +960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "PaymobWebhookService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Payments\\PaymobWebhookService.cs",
               "RelativeDocumentMoniker": "Application\\Payments\\PaymobWebhookService.cs",
@@ -944,7 +972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "AuthenticationExtension.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Extensions\\AuthenticationExtension.cs",
               "RelativeDocumentMoniker": "API\\Extensions\\AuthenticationExtension.cs",
@@ -956,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
@@ -968,7 +996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "Application\\DependencyInjection.cs",
@@ -980,7 +1008,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
@@ -992,7 +1020,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "VerificationEmailBuilder.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Email\\VerificationEmailBuilder.cs",
               "RelativeDocumentMoniker": "Application\\Email\\VerificationEmailBuilder.cs",
@@ -1004,7 +1032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Email\\EmailService.cs",
               "RelativeDocumentMoniker": "Application\\Email\\EmailService.cs",
@@ -1016,7 +1044,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "CorsExtensions.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\Extensions\\CorsExtensions.cs",
               "RelativeDocumentMoniker": "API\\Extensions\\CorsExtensions.cs",
@@ -1028,7 +1056,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DependencyInjection.cs",
@@ -1040,7 +1068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "PasswordResetTokenRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\PasswordResetTokenRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\PasswordResetTokenRepo.cs",
@@ -1052,7 +1080,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "OrderRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrderRepo.cs",
@@ -1064,7 +1092,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "VerificationCodeRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\VerificationCodeRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\VerificationCodeRepo.cs",
@@ -1076,7 +1104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "VertificationCodeConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\VertificationCodeConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\VertificationCodeConfig.cs",
@@ -1088,7 +1116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "HallService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Halls\\HallService.cs",
               "RelativeDocumentMoniker": "Application\\Halls\\HallService.cs",
@@ -1100,7 +1128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 51,
               "Title": "project-structure.md",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\project-structure.md",
               "RelativeDocumentMoniker": "project-structure.md",
@@ -1112,7 +1140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 52,
               "Title": "JwtSettings.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\JwtSettings.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\JwtSettings.cs",
@@ -1124,7 +1152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 58,
               "Title": "CartService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Carts\\CartService.cs",
               "RelativeDocumentMoniker": "Application\\Carts\\CartService.cs",
@@ -1136,7 +1164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "ICartService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Carts\\ICartService.cs",
               "RelativeDocumentMoniker": "Application\\Carts\\ICartService.cs",
@@ -1148,7 +1176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 54,
               "Title": "UpdateTicketTypeDtoValidator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\TicketTypes\\Dto\\Request\\UpdateTicketTypeDtoValidator.cs",
               "RelativeDocumentMoniker": "Application\\TicketTypes\\Dto\\Request\\UpdateTicketTypeDtoValidator.cs",
@@ -1160,7 +1188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 53,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mohamed\\AppData\\Local\\SourceServer\\3596b7e22e6d68a9f2fb1a150a908088dc38355626bf62e4a1b1cf5cf3b4fb26\\API\\Program.cs",
               "ToolTip": "C:\\Users\\Mohamed\\AppData\\Local\\SourceServer\\3596b7e22e6d68a9f2fb1a150a908088dc38355626bf62e4a1b1cf5cf3b4fb26\\API\\Program.cs",
@@ -1170,7 +1198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 55,
               "Title": "TicketTypeConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\TicketTypeConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\TicketTypeConfig.cs",
@@ -1182,7 +1210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "TicketTypeService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\TicketTypes\\TicketTypeService.cs",
               "RelativeDocumentMoniker": "Application\\TicketTypes\\TicketTypeService.cs",
@@ -1194,7 +1222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "TicketType.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\TicketType.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\TicketType.cs",
@@ -1206,7 +1234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "VertificationPurpose.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\VertificationPurpose.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\VertificationPurpose.cs",
@@ -1218,7 +1246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 60,
               "Title": "RefreshTokenService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Refresh Token\\RefreshTokenService.cs",
               "RelativeDocumentMoniker": "Application\\Refresh Token\\RefreshTokenService.cs",
@@ -1230,7 +1258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "PasswordResetTokenService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\ResetPasswordToken\\PasswordResetTokenService.cs",
               "RelativeDocumentMoniker": "Application\\ResetPasswordToken\\PasswordResetTokenService.cs",
@@ -1242,7 +1270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "ResetPasswordDto.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\ResetPasswordDto.cs",
               "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\ResetPasswordDto.cs",
@@ -1254,7 +1282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "ResetPasswordDtoValidator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\ResetPasswordDtoValidator.cs",
               "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\ResetPasswordDtoValidator.cs",
@@ -1266,7 +1294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "IPasswordResetTokenService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\ResetPasswordToken\\IPasswordResetTokenService.cs",
               "RelativeDocumentMoniker": "Application\\ResetPasswordToken\\IPasswordResetTokenService.cs",
@@ -1278,7 +1306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "ITicketGenerator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Tickets\\ITicketGenerator.cs",
               "RelativeDocumentMoniker": "Application\\Tickets\\ITicketGenerator.cs",
@@ -1290,7 +1318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "IPasswordResetTokenRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IPasswordResetTokenRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IPasswordResetTokenRepo.cs",
@@ -1302,7 +1330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "IOrderRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IOrderRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrderRepo.cs",
@@ -1314,7 +1342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "PasswordResetTokenConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\PasswordResetTokenConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\PasswordResetTokenConfig.cs",
@@ -1326,7 +1354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "IVerificationCodeRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IVerificationCodeRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IVerificationCodeRepo.cs",
@@ -1338,7 +1366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "RefreshTokenRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\RefreshTokenRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\RefreshTokenRepo.cs",
@@ -1350,7 +1378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "IRefreshTokenRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IRefreshTokenRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IRefreshTokenRepo.cs",
@@ -1362,7 +1390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\RefreshToken.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\RefreshToken.cs",
@@ -1374,7 +1402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "VerifyEmailDto.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Request\\VerifyEmailDto.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Request\\VerifyEmailDto.cs",
@@ -1386,7 +1414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "ResendVerificationDto.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Request\\ResendVerificationDto.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Request\\ResendVerificationDto.cs",
@@ -1398,7 +1426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "VertificationCode.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\VertificationCode.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\VertificationCode.cs",
@@ -1410,7 +1438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 77,
               "Title": "MyRefreshRequest.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Request\\MyRefreshRequest.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Request\\MyRefreshRequest.cs",
@@ -1422,7 +1450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 78,
               "Title": "StmpEmailSender.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Email\\StmpEmailSender.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Email\\StmpEmailSender.cs",
@@ -1434,7 +1462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 79,
               "Title": "AddUserDtoValidator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Users\\Dto\\Request\\AddUserDtoValidator.cs",
               "RelativeDocumentMoniker": "Application\\Users\\Dto\\Request\\AddUserDtoValidator.cs",
@@ -1446,7 +1474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 80,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Response\\TokenResponse.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Response\\TokenResponse.cs",
@@ -1458,7 +1486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 81,
               "Title": "Payment.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Payment.cs",
@@ -1470,7 +1498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 82,
               "Title": "IAuditable.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Common\\IAuditable.cs",
               "RelativeDocumentMoniker": "Domain\\Common\\IAuditable.cs",
@@ -1482,7 +1510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 83,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Order.cs",
@@ -1494,7 +1522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 84,
               "Title": "EventOccurence.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\EventOccurence.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\EventOccurence.cs",
@@ -1506,7 +1534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 85,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Entities\\Cart.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Cart.cs",
@@ -1518,7 +1546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 87,
               "Title": "EventCategoryConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\EventCategoryConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\EventCategoryConfig.cs",
@@ -1530,7 +1558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 88,
               "Title": "UserConfig.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Configurations\\UserConfig.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\UserConfig.cs",
@@ -1542,7 +1570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 86,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UnitOfWork.cs",
@@ -1554,7 +1582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 89,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Request\\LoginRequest.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Request\\LoginRequest.cs",
@@ -1566,7 +1594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 90,
               "Title": "LogoutRequest.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\API\\DTOs\\Auth\\Request\\LogoutRequest.cs",
               "RelativeDocumentMoniker": "API\\DTOs\\Auth\\Request\\LogoutRequest.cs",
@@ -1578,7 +1606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 93,
               "Title": "HallRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\HallRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\HallRepo.cs",
@@ -1590,7 +1618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 94,
               "Title": "IHallRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IHallRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IHallRepo.cs",
@@ -1602,7 +1630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 92,
               "Title": "IEventOccurenceRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IEventOccurenceRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IEventOccurenceRepo.cs",
@@ -1614,7 +1642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 91,
               "Title": "EventOccurenceService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\EventOccurences\\EventOccurenceService.cs",
               "RelativeDocumentMoniker": "Application\\EventOccurences\\EventOccurenceService.cs",
@@ -1626,7 +1654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "EventOccurenceRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\EventOccurenceRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\EventOccurenceRepo.cs",
@@ -1638,7 +1666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "CartItemService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\CartItems\\CartItemService.cs",
               "RelativeDocumentMoniker": "Application\\CartItems\\CartItemService.cs",
@@ -1650,7 +1678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "CartItemRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\CartItemRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\CartItemRepo.cs",
@@ -1662,7 +1690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "OrderItemRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\OrderItemRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrderItemRepo.cs",
@@ -1674,7 +1702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 99,
               "Title": "AddOccurenceDtoValidator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\EventOccurences\\Dto\\Request\\AddOccurenceDtoValidator.cs",
               "RelativeDocumentMoniker": "Application\\EventOccurences\\Dto\\Request\\AddOccurenceDtoValidator.cs",
@@ -1686,7 +1714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 101,
               "Title": "ICartRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\ICartRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\ICartRepo.cs",
@@ -1698,7 +1726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 100,
               "Title": "CartRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\CartRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\CartRepo.cs",
@@ -1710,7 +1738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 102,
               "Title": "OrderService.Query.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\OrderService.Query.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\OrderService.Query.cs",
@@ -1722,7 +1750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 104,
               "Title": "OrderService.Create.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\OrderService.Create.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\OrderService.Create.cs",
@@ -1734,7 +1762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 105,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\IOrderService.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\IOrderService.cs",
@@ -1746,7 +1774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 103,
               "Title": "ITicketTypeService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\TicketTypes\\ITicketTypeService.cs",
               "RelativeDocumentMoniker": "Application\\TicketTypes\\ITicketTypeService.cs",
@@ -1758,7 +1786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 106,
               "Title": "OrderSummary.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\Dto\\OrderSummary.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\Dto\\OrderSummary.cs",
@@ -1770,7 +1798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 108,
               "Title": "OrderCheckout.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\OrderCheckout.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\OrderCheckout.cs",
@@ -1782,7 +1810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 107,
               "Title": "CheckoutResult.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Orders\\Dto\\CheckoutResult.cs",
               "RelativeDocumentMoniker": "Application\\Orders\\Dto\\CheckoutResult.cs",
@@ -1794,7 +1822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 109,
               "Title": "OrderItemSummary.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\OrderItems\\Dto\\Response\\OrderItemSummary.cs",
               "RelativeDocumentMoniker": "Application\\OrderItems\\Dto\\Response\\OrderItemSummary.cs",
@@ -1806,7 +1834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 110,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Enums\\OrderStatus.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\OrderStatus.cs",
@@ -1818,7 +1846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 111,
               "Title": "TicketService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Tickets\\TicketService.cs",
               "RelativeDocumentMoniker": "Application\\Tickets\\TicketService.cs",
@@ -1830,7 +1858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 112,
               "Title": "TicketGenerator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Application\\Tickets\\TicketGenerator.cs",
               "RelativeDocumentMoniker": "Application\\Tickets\\TicketGenerator.cs",
@@ -1842,7 +1870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 113,
               "Title": "PaymentRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Repositories\\PaymentRepo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\PaymentRepo.cs",
@@ -1854,7 +1882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 114,
               "Title": "IPaymentRepo.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Domain\\Interfaces\\IPaymentRepo.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IPaymentRepo.cs",
@@ -1866,7 +1894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 115,
               "Title": "PaymobPaymentService.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Payments\\Paymob\\PaymobPaymentService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Payments\\Paymob\\PaymobPaymentService.cs",
@@ -1878,7 +1906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 116,
               "Title": "PaymobHmacValidator.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Payments\\Paymob\\PaymobHmacValidator.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Payments\\Paymob\\PaymobHmacValidator.cs",
@@ -1890,7 +1918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 117,
               "Title": "PaymobIntentionResponse.cs",
               "DocumentMoniker": "D:\\EventsHub\\EventsHub\\Infrastructure\\Payments\\Paymob\\DTOs\\PaymobIntentionResponse.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Payments\\Paymob\\DTOs\\PaymobIntentionResponse.cs",

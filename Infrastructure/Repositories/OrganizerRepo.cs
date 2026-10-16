@@ -24,12 +24,6 @@ namespace Infrastructure.Repositories
         {
             ArgumentNullException.ThrowIfNull(organizer, nameof(organizer));
 
-            var user = await _userRepo.AddAsync(organizer.User);
-
-            if (user == null) 
-                return null;
-
-            organizer.UserId = user.Id;
             _context .Organizers.Add(organizer);
             return await _context.SaveChangesAsync() > 0 ? organizer : null;
 

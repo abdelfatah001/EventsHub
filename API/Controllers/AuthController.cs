@@ -1,7 +1,6 @@
 ﻿using API.DTOs.Auth;
 using API.DTOs.Auth.Request;
 using API.DTOs.Auth.Response;
-using Application.Orders;
 using Application.Organizers;
 using Application.Organizers.Dto.Request;
 using Application.Refresh_Token;
@@ -18,8 +17,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace API.Controllers
 {
@@ -154,8 +151,8 @@ namespace API.Controllers
             if (!isValidPassword)
                 return Unauthorized("Invalid Credentials");
 
-
-            return Ok(GenerateTokenReponse(user));
+            var tokenResponse = await GenerateTokenReponse(user);
+            return Ok(tokenResponse);
 
         }
 

@@ -40,10 +40,30 @@ namespace Application.Users
                 Role = userDto.Role,
                 IsActive = true,
                 CurrentCart = null,
-                ActiveRefreshTokenId = null
+                ActiveRefreshTokenId = null,
+                IsOrganizer = (userDto.Role == Domain.Enums.enUserRole.Organizer)
             };
 
-            user.IsOrganizer = false;
+            return await _userRepo.AddAsync(user);
+        }
+        public async Task<User?> AddAdmin(AddAdminDto admin)
+        {
+            if(admin == null)
+                throw new ArgumentNullException("User paypol can't be null");
+
+            var user = new User
+            {
+                FirstName = admin.FirstName,
+                LastName = admin.LastName,
+                Email = admin.Email,
+                Phone = admin.Phone,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(admin.Password),
+                Role = Domain.Enums.enUserRole.Admin,
+                IsActive = true,
+                CurrentCart = null,
+                ActiveRefreshTokenId = null,
+                IsOrganizer = false
+            };
 
             return await _userRepo.AddAsync(user);
         }
@@ -146,7 +166,7 @@ namespace Application.Users
         public async Task<User?> GetUserByIdAsync(int id)
         {
             if (id <= 0)
-                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
+                throw new KeyNotFoundException($"User with Id {id} does not exist");
 
             var user = await _userRepo.GetByIdAsync(id);
 
@@ -172,5 +192,6 @@ namespace Application.Users
             await _userRepo.UpdateAsync(user);
 
         }
+
     }
 }

@@ -12,6 +12,7 @@ namespace Application.Users
     {
 
         Task<User?> AddUser(AddUserDto user);
+        Task<User?> AddAdmin(AddAdminDto user);
 
         /// <summary>
         /// Retrieves all users with detailed information.
