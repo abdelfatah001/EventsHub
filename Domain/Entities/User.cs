@@ -28,5 +28,7 @@ namespace Domain.Entities
 
         public int? ActiveRefreshTokenId { get; set; }
         public ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
+
+        public bool IsOrganizer { get; set; }
     }
 }

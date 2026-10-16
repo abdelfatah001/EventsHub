@@ -43,9 +43,12 @@ namespace Application.Organizers
             if (user == null)
                 throw new BusinessException("Failed to add organizer's user");
 
+            user.IsOrganizer = true;
+
             var organizer = new Organizer
             {
                 UserId = user.Id,
+                User = user,
                 OrganizationName = organizerDto.OrganizationName,
                 Description = organizerDto.Description
             };
@@ -73,9 +76,18 @@ namespace Application.Organizers
         public async Task<OrganizerDetailedResponseDto?> GetByIdAsync(int id)
         {
             if (id <= 0)
-                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
+                throw new ArgumentOutOfRangeException(nameof(id), id, "Organizer id must be a positive integer.");
 
             var organizer = await _organizerRepo.GetByIdAsync(id);
+            return _mapper.Map<OrganizerDetailedResponseDto>(organizer);
+        }
+
+        public async Task<OrganizerDetailedResponseDto?> GetByUserIdAsync(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentOutOfRangeException(nameof(id), id, "User id must be a positive integer.");
+
+            var organizer = await _organizerRepo.GetByUserIdAsync(id);
             return _mapper.Map<OrganizerDetailedResponseDto>(organizer);
         }
 
@@ -86,6 +98,14 @@ namespace Application.Organizers
 
             var organizer = await _organizerRepo.GetByIdAsync(id);
             return _mapper.Map<OrganizerResponseDto>(organizer);
+        }
+
+        public async Task<User> GetUserByIdAsync(int organizerId)
+        {
+            if (organizerId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(organizerId), organizerId, "User id must be a positive integer.");
+
+            return await _organizerRepo.GetUserByIdAsync(organizerId);
         }
 
         public async Task PasswordResetRequest(int id)

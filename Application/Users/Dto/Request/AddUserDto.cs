@@ -11,5 +11,7 @@ namespace Application.Users.Dto.Request
         public string Phone { get; set; } = null!;
         public string Password { get; set; } = null!;
         public enUserRole Role { get; set; } = new enUserRole();
+
+        public bool IsOrganizer { get; set; }
     }
 }

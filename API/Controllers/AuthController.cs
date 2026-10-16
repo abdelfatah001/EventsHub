@@ -1,6 +1,9 @@
 ﻿using API.DTOs.Auth;
 using API.DTOs.Auth.Request;
 using API.DTOs.Auth.Response;
+using Application.Orders;
+using Application.Organizers;
+using Application.Organizers.Dto.Request;
 using Application.Refresh_Token;
 using Application.Users;
 using Application.Users.Dto.Request;
@@ -26,14 +29,17 @@ namespace API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IOrganizerService _organizerService;
         private readonly JwtSettings _jwtSettings;
         private readonly IRefreshTokenService _tokenService;
         private readonly IVerificationService _verificationService;
 
-        public AuthController(IUserService userService, JwtSettings jwtSettings, IRefreshTokenService tokenService,
+        public AuthController(IUserService userService, IOrganizerService organizerService
+            , JwtSettings jwtSettings, IRefreshTokenService tokenService,
             IVerificationService verificationService)
         {
             _userService = userService;
+            _organizerService = organizerService;
             _jwtSettings = jwtSettings;
             _tokenService = tokenService;
             _verificationService = verificationService;
@@ -100,13 +106,35 @@ namespace API.Controllers
         [EnableRateLimiting("AuthLimiter")]
         public async Task<IActionResult> CreateAccount([FromBody]AddUserDto userDto)
         {
-            if (userDto.Role == Domain.Enums.enUserRole.Admin)
-                return BadRequest("Admin account can't be created");
+            switch (userDto.Role)
+            {
+                case Domain.Enums.enUserRole.Admin:
+                    return BadRequest("Admin account can't be created");
 
-            var user = await _userService.AddUser(userDto);
+                case Domain.Enums.enUserRole.Organizer:
+                {
+                    var organizerDto = new AddOrganizerDto
+                    {
+                        userDto = userDto,
+                        OrganizationName = null,
+                        Description = null
+                    };
+                    var organizer = await _organizerService.AddAsync(organizerDto);
+                    await _verificationService.SendCodeAsync(organizer.User, Domain.Enums.enVerificationPurpose.EmailVerification);
+                    break;
+                }
 
-            await _verificationService.SendCodeAsync(user, Domain.Enums.enVerificationPurpose.EmailVerification);
-            
+                case Domain.Enums.enUserRole.User:
+                {
+                    var user = await _userService.AddUser(userDto);
+                    await _verificationService.SendCodeAsync(user, Domain.Enums.enVerificationPurpose.EmailVerification);
+                    break;
+                }
+
+                default:
+                    return BadRequest("Invalid user role");
+            }
+
             return Ok("New Account created successfully");
         }
 
@@ -125,6 +153,7 @@ namespace API.Controllers
 
             if (!isValidPassword)
                 return Unauthorized("Invalid Credentials");
+
 
             return Ok(GenerateTokenReponse(user));
 

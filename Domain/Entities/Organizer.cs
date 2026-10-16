@@ -8,7 +8,7 @@ namespace Domain.Entities
 
         public int UserId { get; set; }
 
-        public string OrganizationName { get; set; } = null!;
+        public string? OrganizationName { get; set; } 
 
         public string? Description { get; set; }
 

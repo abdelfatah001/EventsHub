@@ -48,7 +48,29 @@ namespace Infrastructure.Repositories
 
             return await _context.Organizers
                 .AsNoTracking()
+                .Include(organizer => organizer.User)
                 .FirstOrDefaultAsync(o => o.OrganizerId == id);
+        }
+
+        public async Task<Organizer?> GetByUserIdAsync(int id)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id, nameof(id));
+
+            return await _context.Organizers
+                .AsNoTracking()
+                .Include(organizer => organizer.User)
+                .FirstOrDefaultAsync(o => o.UserId == id);
+        }
+
+        public async Task<User> GetUserByIdAsync(int organizerId)
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(organizerId, nameof(organizerId));
+
+            return await _context.Organizers
+                .AsNoTracking()
+                .Select(o => o.User)
+                .FirstOrDefaultAsync(o => o.Id == organizerId);
+                
         }
 
         public async Task<bool> UpdateAsync(Organizer organizer)

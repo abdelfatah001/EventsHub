@@ -43,6 +43,8 @@ namespace Application.Users
                 ActiveRefreshTokenId = null
             };
 
+            user.IsOrganizer = false;
+
             return await _userRepo.AddAsync(user);
         }
 

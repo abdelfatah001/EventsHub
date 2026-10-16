@@ -11,6 +11,8 @@ namespace Application.Organizers
         Task<Organizer?> AddAsync(AddOrganizerDto user);
         Task<ICollection<OrganizerDetailedResponseDto>> GetAllAsync();
         Task<OrganizerDetailedResponseDto?> GetByIdAsync(int id);
+        Task<OrganizerDetailedResponseDto?> GetByUserIdAsync(int id);
+        Task<User> GetUserByIdAsync(int organizerId);
         Task<OrganizerResponseDto?> GetProfileByIdAsync(int id);
         Task<bool> UpdateOrganizerProfileAsync(int id, UpdateOrganizerProfileDto updateProfile);
 
