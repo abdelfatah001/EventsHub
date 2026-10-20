@@ -118,9 +118,9 @@ namespace Application.Organizers
             await _userService.PasswordResetRequest(organizer.UserId);
         }
 
-        public async Task ResetPassword(ResetPasswordDto dto)
+        public async Task ResetPassword(int userId, ResetPasswordDto dto)
         {
-            await _userService.ResetPassword(dto);
+            await _userService.ResetPassword(userId, dto);
         }
 
         public async Task UpdateEmailAsync(int id, UpdateEmailDto updateEmail)

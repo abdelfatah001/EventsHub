@@ -67,7 +67,7 @@ namespace Application.Users
         Task UpdateEmailAsync(int id, UpdateEmailDto updateEmail);
 
         Task PasswordResetRequest(int userId);
-        Task ResetPassword(ResetPasswordDto dto);
+        Task ResetPassword(int userId, ResetPasswordDto dto);
 
         /// <summary>
         /// Activates the specified user account.

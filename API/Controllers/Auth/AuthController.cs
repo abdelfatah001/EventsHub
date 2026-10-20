@@ -18,7 +18,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace API.Controllers
+namespace API.Controllers.Auth
 {
     [Authorize]
     [ApiController]
@@ -189,6 +189,7 @@ namespace API.Controllers
 
         }
 
+        [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> LogOut([FromBody] LogoutRequest request)
         {

@@ -26,15 +26,15 @@ namespace Application.Users
                 (user, Domain.Enums.enVerificationPurpose.PasswordReset);
         }
 
-        public async Task ResetPassword (ResetPasswordDto dto)
+        public async Task ResetPassword (int userId, ResetPasswordDto dto)
         {
-            var user = await _userRepo.GetByIdAsync(dto.UserId);
+            var user = await _userRepo.GetByIdAsync(userId);
 
             if (user is null)
-                throw new KeyNotFoundException($"User with ID {dto.UserId} does not exist.");
+                throw new KeyNotFoundException($"User with ID {userId} does not exist.");
 
 
-            bool isTokenValid = await _resetTokenService.ValidateTokenAsync(dto.UserId, dto.ResetToken);
+            bool isTokenValid = await _resetTokenService.ValidateTokenAsync(userId, dto.ResetToken);
 
             if (isTokenValid)
                 throw new BusinessException("The provided reset token does not match the issued token or has expired.");

@@ -4,8 +4,9 @@ using Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
-namespace API.Controllers
+namespace API.Controllers.Auth 
 {
 
     [ApiController]
@@ -19,6 +20,7 @@ namespace API.Controllers
             _verificationService = verificationService;
         }
 
+        [EnableRateLimiting("AuthLimiter")]
         [HttpPost("verifyCode")]
         public async Task<IActionResult> VerifyCode([FromBody] VerifyEmailDto dto, enVerificationPurpose purpose)
         {
@@ -27,6 +29,7 @@ namespace API.Controllers
             return Ok("Email verified successfully.");
         }
 
+        [EnableRateLimiting("AuthLimiter")]
         [HttpPost("resendVerification")]
         public async Task<IActionResult> ResendVerification([FromBody] ResendVerificationDto dto, enVerificationPurpose purpose)
         {

@@ -23,7 +23,7 @@ namespace Application.Organizers
         Task<bool> DeactivateUserAsync(int id);
 
         Task PasswordResetRequest(int userId);
-        Task ResetPassword(ResetPasswordDto dto);
+        Task ResetPassword(int userId, ResetPasswordDto dto);
 
     }
 }

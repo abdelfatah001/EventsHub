@@ -5,7 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers.Auth
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
-namespace API.Controllers
+namespace API.Controllers.Admin
 {
     [Authorize]
     [ApiController]
@@ -20,9 +20,7 @@ namespace API.Controllers
             _service = eventCategoryService;
         }
 
-        // GET: api/EventsCategories
-        [Authorize]
-        [HttpGet]
+        [HttpGet("/GetAll")]
         public async Task<ActionResult> GetAll()
         {
             var result = await _service.GetAllAsync();
@@ -30,11 +28,13 @@ namespace API.Controllers
             return Ok(result);
         }
 
-        // GET: api/EventsCategories/{id}
         [Authorize]
-        [HttpGet("{id:guid}")]
+        [HttpGet("/GetById/{id:guid}")]
         public async Task<ActionResult<CategoryResponseDto>> GetById(int id)
         {
+            if (id <= 0)
+                return BadRequest(new { message = "Invalid ID. ID must be a positive integer." });
+
             var result = await _service.GetByIdAsync(id);
 
             return result is not null ?
@@ -42,11 +42,13 @@ namespace API.Controllers
                 NotFound(new { message = $"Category with ID {id} not found." });
         }
 
-        // POST: api/EventsCategories
         [Authorize(Roles = "Admin")]
-        [HttpPost]
+        [HttpPost("/Add")]
         public async Task<ActionResult<CategoryResponseDto>> Add([FromBody] CategoryRequestDto dto)
         {
+            if (dto is null)
+                return BadRequest(new { message = "Request body cannot be null." });
+
             var result = await _service.AddAsync(dto);
 
             return result is not null ?
@@ -56,9 +58,12 @@ namespace API.Controllers
 
         // PUT: api/EventsCategories/{id}
         [Authorize(Roles = "Admin")]
-        [HttpPut("{id}")]
+        [HttpPut("/Update/{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] CategoryRequestDto dto)
         {
+            if (dto is null)
+                return BadRequest(new { message = "Request body cannot be null." });
+
             var result = await _service.UpdateAsync(id, dto);
 
             return result ?

@@ -5,12 +5,12 @@ using Application.ResetPasswordToken;
 using Application.Vertification;
 using Microsoft.AspNetCore.Authorization;
 
-namespace API.Controllers
+namespace API.Controllers.Auth
 {
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserService _userService;
         private readonly IVerificationService _verificationService;
@@ -44,7 +44,7 @@ namespace API.Controllers
                 NotFound(new { message = $"User with ID {id} not found." });
         }
 
-
+        [Authorize]
         [HttpGet("/GetProfileById/{id}")]
         public async Task<IActionResult> GetUserProfileById(int id)
         {
@@ -77,33 +77,44 @@ namespace API.Controllers
                  BadRequest(new { message = $"Failed to deactivate user with ID {id}." });
         }
 
-        // owner user
+        [Authorize]
         [HttpPut("/UpdateProfile/{id}")]
         public async Task<IActionResult> UpdateProfile(int id, [FromBody] UpdateProfileDto updateProfile)
         {
-            var result = await _userService.UpdateProfileAsync(id, updateProfile);
+            if(updateProfile == null)
+                return BadRequest(new { message = "Update profile data cannot be null or empty." });
+
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
+
+            var result = await _userService.UpdateProfileAsync(userId, updateProfile);
 
             return result ?
-                 Ok(new { message = $"User profile with ID {id} updated successfully." }) :
-                 BadRequest(new { message = $"Failed to update user profile with ID {id}." });
+                 Ok(new { message = $"User profile updated successfully." }) :
+                 BadRequest(new { message = $"Failed to update user profile." });
         }
-       
-        
-        // owner user
-        [HttpPut("/UpdateEmail/{id}")]
-        public async Task<IActionResult> UpdateEmail(int id, [FromBody] UpdateEmailDto updateEmail)
-        {
-            await _userService.UpdateEmailAsync(id, updateEmail);
 
-            return Ok(new { message = $"User email with ID {id} updated successfully." });
-        }
-        
-        // owner user
-        [HttpPost("password-reset-request")]
-        public async Task<IActionResult> PasswordResetRequest(int userId)
+        [Authorize]       
+        [HttpPut("/UpdateEmail/{id}")]
+        public async Task<IActionResult> UpdateEmail([FromBody] UpdateEmailDto updateEmail)
         {
-            if (userId <= 0)
-                return BadRequest(new { message = "Invalid user ID." });
+            if(updateEmail == null)
+                return BadRequest(new { message = "New email cannot be null or empty." });
+
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
+
+            await _userService.UpdateEmailAsync(userId, updateEmail);
+
+            return Ok(new { message = $"User email updated successfully." });
+        }
+
+        [Authorize]
+        [HttpPost("password-reset-request")]
+        public async Task<IActionResult> PasswordResetRequest()
+        {
+            if(GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
             var user = await _userService.GetUserByIdAsync(userId);
 
@@ -115,15 +126,19 @@ namespace API.Controllers
             return Ok(new { message = $"Password reset code sent to user with ID {userId}." });
         }
 
+        [Authorize]
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
         {
             if (dto == null)
                 return BadRequest("Request cannot be null.");
 
-            await _userService.ResetPassword(dto);
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
-            return Ok(new { message = $"Password reset successfully for user with ID {dto.UserId}." });
+            await _userService.ResetPassword(userId, dto);
+
+            return Ok(new { message = $"Password reset successfully." });
         }
     }
 }

@@ -1,17 +1,19 @@
-﻿using Application.Organizers;
+﻿using API.Controllers;
+using Application.Organizers;
 using Application.ResetPasswordToken;
 using Application.Users;
 using Application.Users.Dto.Request;
 using Application.Vertification;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
-namespace API.Controllers
+namespace API.Controllers.Auth
 {
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class OrganizerController : Controller
+    public class OrganizerController : BaseController
     {
         private readonly IOrganizerService _organizerService;
         private readonly IVerificationService _verificationService;
@@ -36,7 +38,7 @@ namespace API.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("/GetById/{id}")]
-        public async Task<IActionResult> GetUserById(int id)
+        public async Task<IActionResult> GetOrganizerById(int id)
         {
             var result = await _organizerService.GetByIdAsync(id);
 
@@ -45,9 +47,9 @@ namespace API.Controllers
                 NotFound(new { message = $"Organizer with ID {id} not found." });
         }
 
-
+        [Authorize]
         [HttpGet("/GetProfileById/{id}")]
-        public async Task<IActionResult> GetUserProfileById(int id)
+        public async Task<IActionResult> GetOrganizerProfileById(int id)
         {
             var result = await _organizerService.GetProfileByIdAsync(id);
 
@@ -58,7 +60,7 @@ namespace API.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPut("/Activate/{id}")]
-        public async Task<IActionResult> ActivateUser(int id)
+        public async Task<IActionResult> ActivateOrganizer(int id)
         {
             var result = await _organizerService.ActivateUserAsync(id);
 
@@ -69,7 +71,7 @@ namespace API.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPut("/Deactivate/{id}")]
-        public async Task<IActionResult> DeactivateUser(int id)
+        public async Task<IActionResult> DeactivateOrganizer(int id)
         {
             var result = await _organizerService.DeactivateUserAsync(id);
 
@@ -78,53 +80,70 @@ namespace API.Controllers
                  BadRequest(new { message = $"Failed to deactivate organizer with ID {id}." });
         }
 
-        // owner user
-        [HttpPut("/UpdateProfile/{id}")]
-        public async Task<IActionResult> UpdateProfile(int id, [FromBody] UpdateProfileDto updateProfile)
+        [Authorize]
+        [HttpPut("/UpdateProfile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto updateProfile)
         {
-            var result = await _organizerService.UpdateUserProfileAsync(id, updateProfile);
+            if (updateProfile == null)
+                return BadRequest("Update profile data cannot be null or empty.");
+
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
+
+            var result = await _organizerService.UpdateUserProfileAsync(userId, updateProfile);
 
             return result ?
-                 Ok(new { message = $"Organizer profile with ID {id} updated successfully." }) :
-                 BadRequest(new { message = $"Failed to update organizer profile with ID {id}." });
+                 Ok(new { message = $"Organizer profile updated successfully." }) :
+                 BadRequest(new { message = $"Failed to update organizer profile." });
         }
 
 
-        // owner user
-        [HttpPut("/UpdateEmail/{id}")]
-        public async Task<IActionResult> UpdateEmail(int id, [FromBody] UpdateEmailDto updateEmail)
+        [Authorize]
+        [HttpPut("/UpdateEmail")]
+        public async Task<IActionResult> UpdateEmail([FromBody] UpdateEmailDto updateEmail)
         {
-            await _organizerService.UpdateEmailAsync(id, updateEmail);
+            if (updateEmail == null)
+                return BadRequest("New email cannot be null or empty.");
 
-            return Ok(new { message = $"Organizer email with ID {id} updated successfully." });
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
+
+            await _organizerService.UpdateEmailAsync(userId, updateEmail);
+
+            return Ok(new { message = $"Organizer email updated successfully." });
         }
 
-        // owner user
+        [Authorize]
         [HttpPost("password-reset-request")]
-        public async Task<IActionResult> PasswordResetRequest(int id)
+        public async Task<IActionResult> PasswordResetRequest()
         {
-            if (id <= 0)
-                return BadRequest(new { message = "Invalid user ID." });
 
-            var user = await _organizerService.GetUserByIdAsync(id);
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
+
+            var user = await _organizerService.GetUserByIdAsync(userId);
 
             if (user == null)
-                return NotFound(new { message = $"User with ID {user.Id} not found." });
+                return NotFound(new { message = $"User not found." });
 
             await _verificationService.SendCodeAsync(user, Domain.Enums.enVerificationPurpose.PasswordReset);
 
-            return Ok(new { message = $"Password reset code sent to user with ID {user.Id}." });
+            return Ok(new { message = $"Password reset code sent." });
         }
 
+        [Authorize]
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
         {
             if (dto == null)
                 return BadRequest("Request cannot be null.");
 
-            await _organizerService.ResetPassword(dto);
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
-            return Ok(new { message = $"Password reset successfully for user with ID {dto.UserId}." });
+            await _organizerService.ResetPassword(userId, dto);
+
+            return Ok(new { message = $"Password reset successfully." });
         }
     }
 }
