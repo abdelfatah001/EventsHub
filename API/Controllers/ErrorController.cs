@@ -15,17 +15,18 @@ namespace API.Controllers
             var exception =
                 HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-            return 
+            return
                 exception switch
                 {
                     KeyNotFoundException ex => NotFound(new { message = ex.Message }),
                     ArgumentOutOfRangeException ex => BadRequest(new { message = ex.Message }),
                     ArgumentNullException ex => BadRequest(new { message = ex.Message }),
                     ArgumentException ex => BadRequest(new { message = ex.Message }),
-                    BusinessException ex => Conflict (new { message = ex.Message }),  // Error 409
+                    BusinessException ex => Conflict(new { message = ex.Message }),  // Error 409
+                    InvalidOperationException ex => Conflict(new { message = ex.Message }),
 
                     // else
-                    _ => StatusCode(500, new { message = "An unexpected error occurred." }) 
+                    _ => StatusCode(500, new { message = "An unexpected error occurred." })
                 };
         }
 

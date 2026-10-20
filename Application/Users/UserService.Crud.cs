@@ -25,10 +25,21 @@ namespace Application.Users
             _resetTokenService = resetTokenService;
         }
 
+        public async Task CheckEmailPhoneUniquness (string Email, string Phone)
+        {
+            if (await _userRepo.ExistsByEmailAsync(Email))
+                throw new InvalidOperationException("A user with this email already exists.");
+
+            if (await _userRepo.ExistsByPhoneAsync(Phone))
+                throw new InvalidOperationException("A user with this phone already exists.");
+        }
+
         public async Task<User?> AddUser(AddUserDto userDto)
         {
             if (userDto == null)
                 throw new ArgumentNullException("User paypol can't be null");
+
+            await CheckEmailPhoneUniquness(userDto.Email, userDto.Phone);
 
             var user = new User
             {
@@ -50,6 +61,8 @@ namespace Application.Users
         {
             if(admin == null)
                 throw new ArgumentNullException("User paypol can't be null");
+
+            CheckEmailPhoneUniquness(admin.Email, admin.Phone);
 
             var user = new User
             {

@@ -45,8 +45,6 @@ namespace Application.Organizers
             if (user == null)
                 throw new BusinessException("Failed to add organizer's user");
 
-            
-
             var organizer = new Organizer
             {
                 UserId = user.Id,

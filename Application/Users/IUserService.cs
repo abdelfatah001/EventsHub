@@ -13,6 +13,7 @@ namespace Application.Users
 
         Task<User?> AddUser(AddUserDto user);
         Task<User?> AddAdmin(AddAdminDto user);
+        Task CheckEmailPhoneUniquness(string Email, string Phone);
 
         /// <summary>
         /// Retrieves all users with detailed information.
