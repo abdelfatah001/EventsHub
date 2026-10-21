@@ -28,7 +28,7 @@ namespace Application.EventOccurences
         public async Task<OccurenceResponseDto?> AddAsync(AddOccurenceDto newOccurence)
         {
             if (newOccurence is null)
-                throw new ArgumentNullException(nameof(newOccurence), "New event occurence payload cannot se null");
+                throw new ArgumentNullException(nameof(newOccurence), "New event occurence payload cannot be null");
 
             var eventExists = await _eventRepo.ExistsAsync(newOccurence.EventId);
 
@@ -80,8 +80,6 @@ namespace Application.EventOccurences
         public async Task<IEnumerable<OccurenceResponseDto>> GetAllByEventIdAsync(int eventId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(eventId);
-
-            // Q : Am I need to check its existence first or it useless
 
             var occurences = await _occurenceRepo.GetAllByEventIdAsync(eventId);
 

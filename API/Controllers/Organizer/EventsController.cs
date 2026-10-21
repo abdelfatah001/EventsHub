@@ -18,11 +18,13 @@ namespace API.Controllers.OrganizerControllers
             _service = service;
         }
 
-        // POST: api/events
         [Authorize (Roles = "Organizer")]
-        [HttpPost]
+        [HttpPost("Add")]
         public async Task<ActionResult<EventResponseDto>> Add([FromBody] AddEventDto newObject)
         {
+            if (newObject is null)
+                return BadRequest(new { message = "Request body cannot be null." });
+
             var result = await _service.AddAsync(newObject);
 
             return result is not null ?
@@ -31,9 +33,8 @@ namespace API.Controllers.OrganizerControllers
 
         }
 
-        // GET: api/events
         [Authorize]
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetAll()
         {
             var result = await _service.GetAllAsync();
@@ -41,11 +42,13 @@ namespace API.Controllers.OrganizerControllers
             return Ok(result);
         }
 
-        // GET: api/events/{id}
         [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<EventResponseDto>> GetById(int id)
         {
+            if (id <= 0)
+                return BadRequest(new { message = "Invalid ID. ID must be a positive integer." });
+
             var result = await _service.GetByIdAsync(id);
 
             return result is not null ?
@@ -53,31 +56,40 @@ namespace API.Controllers.OrganizerControllers
                 NotFound(new { message = $"Event with ID {id} not found." });
         }
 
-        // GET: api/events/organizer/{organizerId}
-        [Authorize(Roles = "Admin,Organizer")]
-        [HttpGet("organizer/{organizerId}")]
+        [Authorize]
+        [HttpGet("GetByOrganizer/{organizerId}")]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetByOrganizer(int organizerId)
         {
+            if (organizerId <= 0)
+                return BadRequest(new { message = "Invalid organizer ID. ID must be a positive integer." });
+
             var result = await _service.GetAllByOrganizerIdAsync(organizerId);
 
             return Ok(result);
         }
 
-        // GET: api/events/category/{categoryId}
         [Authorize]
-        [HttpGet("category/{categoryId}")]
+        [HttpGet("GetByCategory/{categoryId}")]
         public async Task<ActionResult<IEnumerable<EventResponseDto>>> GetByCategory(int categoryId)
         {
-            var result = await _service.GetAllByOrganizerIdAsync(categoryId);
+            if (categoryId <= 0)
+                return BadRequest(new { message = "Invalid category ID. ID must be a positive integer." });
+
+            var result = await _service.GetAllByCategoryIdAsync(categoryId);
 
             return Ok(result);
         }
 
-        // PUT: api/events/{id}
         [Authorize(Roles = "Organizer")]
-        [HttpPut("{id}")]
+        [HttpPut("Update/{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] UpdateEventDto updatedObject)
         {
+            if (id <= 0)
+                return BadRequest(new { message = "Invalid ID. ID must be a positive integer." });
+
+            if (updatedObject is null)
+                return BadRequest(new { message = "Request body cannot be null." });
+    
             var result = await _service.UpdateAsync(id, updatedObject);
 
             return result ?
@@ -86,11 +98,13 @@ namespace API.Controllers.OrganizerControllers
 
         }
 
-        // DELETE: api/events/{id}
         [Authorize(Roles = "Admin,Organizer")]
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<ActionResult> Delete(int id)
         {
+            if (id <= 0)
+                return BadRequest(new { message = "Invalid ID. ID must be a positive integer." });
+
             var result = await _service.DeleteAsync(id);
 
             return result ?

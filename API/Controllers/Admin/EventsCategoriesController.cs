@@ -20,7 +20,8 @@ namespace API.Controllers.Admin
             _service = eventCategoryService;
         }
 
-        [HttpGet("/GetAll")]
+        [Authorize]
+        [HttpGet("GetAll")]
         public async Task<ActionResult> GetAll()
         {
             var result = await _service.GetAllAsync();
@@ -29,7 +30,7 @@ namespace API.Controllers.Admin
         }
 
         [Authorize]
-        [HttpGet("/GetById/{id:guid}")]
+        [HttpGet("GetById/{id:guid}")]
         public async Task<ActionResult<CategoryResponseDto>> GetById(int id)
         {
             if (id <= 0)
@@ -43,7 +44,7 @@ namespace API.Controllers.Admin
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("/Add")]
+        [HttpPost("Add")]
         public async Task<ActionResult<CategoryResponseDto>> Add([FromBody] CategoryRequestDto dto)
         {
             if (dto is null)
@@ -58,7 +59,7 @@ namespace API.Controllers.Admin
 
         // PUT: api/EventsCategories/{id}
         [Authorize(Roles = "Admin")]
-        [HttpPut("/Update/{id}")]
+        [HttpPut("Update/{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] CategoryRequestDto dto)
         {
             if (dto is null)

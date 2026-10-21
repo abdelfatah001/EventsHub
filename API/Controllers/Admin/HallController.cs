@@ -20,7 +20,7 @@ namespace API.Controllers.Admin
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("/GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _hallService.GetAllAsync();
@@ -28,7 +28,7 @@ namespace API.Controllers.Admin
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("/GetById/{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             if (id <= 0)
@@ -43,7 +43,7 @@ namespace API.Controllers.Admin
 
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("/Add")]
+        [HttpPost("Add")]
         public async Task<ActionResult<CategoryResponseDto>> Add([FromBody] AddHallDto dto)
         {
             if (dto is null)
@@ -58,7 +58,7 @@ namespace API.Controllers.Admin
 
         // PUT: api/EventsCategories/{id}
         [Authorize(Roles = "Admin")]
-        [HttpPut("/Update/{id}")]
+        [HttpPut("Update/{id}")]
         public async Task<ActionResult> Update(int id, [FromBody] UpdateHallDto dto)
         {
             if (dto is null)

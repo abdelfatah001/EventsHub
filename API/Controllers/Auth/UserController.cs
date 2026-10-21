@@ -26,7 +26,7 @@ namespace API.Controllers.Auth
 
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("/GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllUsers()
         {
             var result = await _userService.GetAllAsync();
@@ -34,7 +34,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("/GetById/{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
             var result = await _userService.GetByIdAsync(id);
@@ -45,7 +45,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize]
-        [HttpGet("/GetProfileById/{id}")]
+        [HttpGet("GetProfileById/{id}")]
         public async Task<IActionResult> GetUserProfileById(int id)
         {
             var result = await _userService.GetProfileByIdAsync(id);
@@ -56,7 +56,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut("/Activate/{id}")]
+        [HttpPut("Activate/{id}")]
         public async Task<IActionResult> ActivateUser(int id)
         {
             var result = await _userService.ActivateUserAsync(id);
@@ -67,7 +67,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut("/Deactivate/{id}")]
+        [HttpPut("Deactivate/{id}")]
         public async Task<IActionResult> DeactivateUser(int id)
         {
             var result = await _userService.DeactivateUserAsync(id);
@@ -78,7 +78,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize]
-        [HttpPut("/UpdateProfile/{id}")]
+        [HttpPut("UpdateProfile/{id}")]
         public async Task<IActionResult> UpdateProfile(int id, [FromBody] UpdateProfileDto updateProfile)
         {
             if(updateProfile == null)
@@ -95,7 +95,7 @@ namespace API.Controllers.Auth
         }
 
         [Authorize]       
-        [HttpPut("/UpdateEmail/{id}")]
+        [HttpPut("UpdateEmail/{id}")]
         public async Task<IActionResult> UpdateEmail([FromBody] UpdateEmailDto updateEmail)
         {
             if(updateEmail == null)
