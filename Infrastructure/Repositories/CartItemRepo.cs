@@ -80,7 +80,7 @@ namespace Infrastructure.Repositories
             return await _context.SaveChangesAsync() > 0;
 
         }
-        public async Task<double> CalculateCartTotalAmount(int cartId)
+        public async Task<decimal> CalculateCartTotalAmount(int cartId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartId);
 

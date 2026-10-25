@@ -54,9 +54,8 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<bool> UpdateTotalAmount(int cartId, int amount)
+        public async Task<bool> UpdateTotalAmount(int cartId, decimal amount)
         {
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(amount);
 
             int affectedRows = await _context.Carts
                 .Where(x => x.Id == cartId)

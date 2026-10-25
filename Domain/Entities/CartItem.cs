@@ -16,6 +16,6 @@ namespace Domain.Entities
         public Ticket? Ticket { get; set; }
 
         public int Quantity { get; set; }
-        public double UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace API.Controllers.UserControllers
         }
 
         [Authorize(Roles = "User")]
-        [HttpPost("GetOrCreateCart/{userId}")]
+        [HttpPost("GetOrCreateCart")]
         public async Task<ActionResult<int>> GetOrCreateCart()
         {
             if (GetAuthenticatedUserId() is not int userId)
