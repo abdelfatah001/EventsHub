@@ -3,6 +3,7 @@ using Domain.Interfaces;
 using Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Domain.Enums;
+using Domain.Common.Dto;
 namespace Infrastructure.Repositories
 {
     public class CartItemRepo : ICartItemRepo
@@ -26,13 +27,20 @@ namespace Infrastructure.Repositories
 
         
 
-        public async Task<IEnumerable<CartItem>> GetByCartId(int cartId)
+        public async Task<IEnumerable<CartItemDto>> GetItemsByCartId(int cartId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartId);
 
             return await _context.CartItems
                 .AsNoTracking()
                 .Where(c => c.Id == cartId)
+                .Select(c => new CartItemDto
+                {
+                    TicketTypeId = c.TicketTypeId,
+                    TicketTypeName = c.TicketType.Name,
+                    Quantity = c.Quantity,
+                    Price = c.UnitPrice
+                })
                 .ToListAsync();
         }
 
@@ -42,6 +50,7 @@ namespace Infrastructure.Repositories
 
             return await _context.CartItems
                 .AsNoTracking()
+                .Include(c => c.Cart) 
                 .FirstOrDefaultAsync(c => c.Id == cartItemId);
         }
 

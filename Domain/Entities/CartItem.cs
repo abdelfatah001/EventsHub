@@ -10,11 +10,12 @@ namespace Domain.Entities
         public Cart? Cart { get; set; }
 
         public int TicketTypeId { get; set; }
+        public TicketType? TicketType { get; set; }
 
         public int TicketId { get; set; }
         public Ticket? Ticket { get; set; }
 
         public int Quantity { get; set; }
-        public int UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
     }
 }

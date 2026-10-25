@@ -1,5 +1,7 @@
 ﻿using Application.CartItems.Dto.Request;
+using Application.CartItems.Dto.Response;
 using Application.Carts;
+using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Interfaces;
@@ -12,6 +14,7 @@ namespace Application.CartItems
         private readonly ICartRepo _cartRepo;
         private readonly ITicketTypeRepo _ticketTypeRepo;
         private readonly ICartService _cartService;
+        private readonly IMapper _mapper;
 
         public CartItemService(ICartItemRepo repo, ICartRepo cartRepo, ITicketTypeRepo ticketTypeRepo, ICartService cartService)
         {
@@ -32,7 +35,7 @@ namespace Application.CartItems
             if (!await _ticketTypeRepo.IsThereAvaliableTicketsAsync(newItem.TicketTypeId, newItem.Quantity))
                 throw new NotEnoughTicketException("Not enough tickets available.");
 
-            var cartId = await _cartService.AddCart(userId);
+            var cartId = await _cartService.CreateCart(userId);
 
             // if item existed return its Id if not return 0
             var itemId = await _repo.IsCartItemRepeated(cartId, newItem.TicketTypeId);
@@ -41,7 +44,7 @@ namespace Application.CartItems
             {
                 var cartItem = new CartItem
                 {
-                    CartId = await _cartService.AddCart(userId),
+                    CartId = await _cartService.CreateCart(userId),
                     TicketTypeId = newItem.TicketTypeId,
                     Quantity = newItem.Quantity
                 };
@@ -56,7 +59,23 @@ namespace Application.CartItems
 
         }
 
-        public async Task UpdateItemQuantityAsync(int cartId, int itemId, int newQuantity)
+        private async Task<CartItem> GetCartItem (int userId, int itemId)
+        {
+            var item = await _repo.GetById(itemId);
+
+            if (item == null)
+                throw new KeyNotFoundException($"Cart item with Id {itemId} is not existed.");
+
+            if (item.Cart == null)
+                throw new KeyNotFoundException($"Cart with Id {item.CartId} is not existed.");
+
+            if (userId != item.Cart.UserId)
+                throw new UnauthorizedAccessException("User is not authorized to update this cart item.");
+
+            return item;
+        }
+
+        public async Task UpdateItemQuantityAsync(int userId, int itemId, int newQuantity)
         {
             if (itemId <= 0)
                 throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
@@ -64,34 +83,37 @@ namespace Application.CartItems
             if (newQuantity <= 0)
                 throw new ArgumentOutOfRangeException("New quantity must be a positive integer.");
 
-            var item = await _repo.GetById(itemId);
-
-            if (item == null)
-                throw new KeyNotFoundException($"Cart item with Id {itemId} is not existed.");
+            var item = await GetCartItem(userId, itemId);
 
             item.Quantity = newQuantity;
 
             await _repo.UpdateAsync(item);
 
-            await _cartRepo.UpdateTotalAmount(cartId, await _repo.CalculateCartTotalAmount(cartId));
+            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalAmount(item.CartId));
 
 
         } 
         
-        public async Task DeleteItem(int itemId, int cartId)
+        public async Task DeleteItem(int userId, int itemId)
         {
             if (itemId <= 0)
                 throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
 
-            var item = await _repo.GetById(itemId);
-
-            if (item is null)
-                throw new KeyNotFoundException($"Item with Id {itemId} is not existed");
+            var item = await GetCartItem(userId, itemId);
 
             await _repo.DeleteAsync(item);
 
-            await _cartRepo.UpdateTotalAmount(cartId, await _repo.CalculateCartTotalAmount(cartId));
+            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalAmount(item.CartId));
         }
 
+        public async Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int cartId)
+        {
+            if (cartId <= 0)
+                throw new ArgumentOutOfRangeException("Cart Id must be a positive integer.");
+
+            var items = await _repo.GetItemsByCartId(cartId);
+
+            return _mapper.Map<IEnumerable<ItemResponseDto>>(items);    
+        }
     }
 }

@@ -26,6 +26,11 @@ namespace Infrastructure.Configurations
                    .HasForeignKey(x => x.CartId)
                    .OnDelete(DeleteBehavior.Cascade);
 
+            builder.HasOne(x => x.TicketType)
+                    .WithMany()
+                    .HasForeignKey(x => x.TicketTypeId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

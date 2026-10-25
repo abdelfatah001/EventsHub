@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.Common.Dto;
+using Domain.Entities;
 
 namespace Domain.Interfaces
 {
@@ -6,7 +7,7 @@ namespace Domain.Interfaces
     {
         Task<CartItem?> AddAsync (CartItem item);
         Task<CartItem?> GetById (int cartItemId);
-        Task<IEnumerable<CartItem>> GetByCartId (int cartId);
+        Task<IEnumerable<CartItemDto>> GetItemsByCartId (int cartId);
         Task<bool> UpdateAsync (CartItem cartItem);
         Task<bool> DeleteAsync (CartItem cartItem);
 

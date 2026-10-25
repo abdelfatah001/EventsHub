@@ -14,7 +14,7 @@ namespace Application.Carts
             _repo = repo;
         }
 
-        public async Task<int> AddCart(int userId)
+        public async Task<int> CreateCart(int userId)
         {
             if (userId <= 0)
                 throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
