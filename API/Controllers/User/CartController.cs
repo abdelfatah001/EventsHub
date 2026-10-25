@@ -23,10 +23,10 @@ namespace API.Controllers.UserControllers
 
         [Authorize(Roles = "User")]
         [HttpPost("GetOrCreateCart/{userId}")]
-        public async Task<ActionResult<int>> GetOrCreateCart(int userId)
+        public async Task<ActionResult<int>> GetOrCreateCart()
         {
-            if (userId <= 0)
-                return BadRequest(new { message = "Invalid User ID. ID must be a positive integer." });
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
             var cartId = await _cartService.CreateCart(userId);
 
@@ -34,31 +34,31 @@ namespace API.Controllers.UserControllers
         }
 
         [Authorize(Roles = "User")]
-        [HttpPut("MarkCartAsOrdered/{cartId}")]
-        public async Task<ActionResult> MarkCartAsOrdered(int cartId)
+        [HttpPut("MarkCartAsOrdered")]
+        public async Task<ActionResult> MarkCartAsOrdered()
         {
-            if (cartId <= 0)
-                return BadRequest(new { message = "Invalid Cart ID. ID must be a positive integer." });
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
-            await _cartService.MarkCartAsOrdered(cartId);
+            await _cartService.MarkCartAsOrdered(userId);
 
             return Ok();
         }
 
         [Authorize(Roles = "User")]
-        [HttpGet("GetCartItems/{cartId}")]
-        public async Task<ActionResult<IEnumerable<ItemResponseDto>>> GetCartItems(int cartId)
+        [HttpGet("GetCartItems")]
+        public async Task<ActionResult<IEnumerable<ItemResponseDto>>> GetCartItems()
         {
-            if (cartId <= 0)
-                return BadRequest(new { message = "Invalid Cart ID. ID must be a positive integer." });
+            if (GetAuthenticatedUserId() is not int userId)
+                return Unauthorized(new { message = "User ID not found in token." });
 
-            var items = await _cartItemService.GetCartItemsByCartIdAsync(cartId);
+            var items = await _cartItemService.GetCartItemsByCartIdAsync(userId);
 
             return Ok(items);
         }
 
         [Authorize(Roles = "User")]
-        [HttpPost("AddItemToCart/{cartId}")]
+        [HttpPost("AddItemToCart")]
         public async Task<ActionResult<ItemResponseDto>> AddItemToCart([FromBody] AddCartItemDto dto)
         {
             if (dto is null)
@@ -74,7 +74,7 @@ namespace API.Controllers.UserControllers
 
 
         [Authorize(Roles = "User")]
-        [HttpPut("UpdateCartItem/{cartId}/{itemId}")]
+        [HttpPut("UpdateCartItem/{itemId}")]
         public async Task<ActionResult> UpdateItemQuantity (int itemId, int newQuantity)
         {
             if (itemId <= 0)
@@ -91,7 +91,7 @@ namespace API.Controllers.UserControllers
         }
 
         [Authorize(Roles = "User")]
-        [HttpDelete("RemoveItemFromCart/{cartId}/{itemId}")]
+        [HttpDelete("RemoveItemFromCart/{itemId}")]
         public async Task<ActionResult> DeleteItemFromCart (int itemId)
         {
             if (itemId <= 0)

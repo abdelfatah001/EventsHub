@@ -33,7 +33,7 @@ namespace Infrastructure.Repositories
 
             return await _context.CartItems
                 .AsNoTracking()
-                .Where(c => c.Id == cartId)
+                .Where(c => c.CartId == cartId)
                 .Select(c => new CartItemDto
                 {
                     TicketTypeId = c.TicketTypeId,
@@ -80,7 +80,7 @@ namespace Infrastructure.Repositories
             return await _context.SaveChangesAsync() > 0;
 
         }
-        public async Task<int> CalculateCartTotalAmount(int cartId)
+        public async Task<double> CalculateCartTotalAmount(int cartId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartId);
 

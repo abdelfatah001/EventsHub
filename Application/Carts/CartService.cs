@@ -46,15 +46,12 @@ namespace Application.Carts
             return await _repo.GetCurrentCartByUserIdAsync(userId);
         }
 
-        public async Task MarkCartAsOrdered(int cartId)
+        public async Task MarkCartAsOrdered(int userId)
         {
-            if (cartId <= 0) 
-                throw new ArgumentOutOfRangeException("Cart Id must be a positive integer.");
+            var cart = await GetCurrentCartByUserIdAsync(userId);
 
-            var cart = await _repo.GetByIdAsync(cartId);
-
-            if (cart is null)
-                throw new KeyNotFoundException($"Cart with Id {cartId} does not exist");
+            if (cart == null)
+                throw new KeyNotFoundException($"No active cart found for user with Id {userId}.");
 
             cart.Status = enCartStatus.Ordered;
 

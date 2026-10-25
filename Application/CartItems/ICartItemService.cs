@@ -7,7 +7,7 @@ namespace Application.CartItems
     public interface ICartItemService
     {
         Task AddAsync(int userId, AddCartItemDto newItem);
-        Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int cartId);
+        Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int userId);
         Task UpdateItemQuantityAsync(int cartId, int itemId, int newQuantity);
 
         Task DeleteItem (int itemId, int cartId);

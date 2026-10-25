@@ -7,7 +7,7 @@ namespace Application.Carts
         // if no existed cart to this user
         Task<int> CreateCart (int UserId);
         Task<Cart?> GetCurrentCartByUserIdAsync(int userId);
-        Task MarkCartAsOrdered (int cartId);
+        Task MarkCartAsOrdered (int userId);
 
 
     }

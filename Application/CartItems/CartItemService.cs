@@ -16,12 +16,14 @@ namespace Application.CartItems
         private readonly ICartService _cartService;
         private readonly IMapper _mapper;
 
-        public CartItemService(ICartItemRepo repo, ICartRepo cartRepo, ITicketTypeRepo ticketTypeRepo, ICartService cartService)
+        public CartItemService(ICartItemRepo repo, ICartRepo cartRepo, 
+            ITicketTypeRepo ticketTypeRepo, ICartService cartService, IMapper mapper)
         {
             _repo = repo;
             _cartRepo = cartRepo;
             _ticketTypeRepo = ticketTypeRepo;
             _cartService = cartService;
+            _mapper = mapper;
         }
 
         public async Task AddAsync (int userId, AddCartItemDto newItem)
@@ -106,12 +108,14 @@ namespace Application.CartItems
             await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalAmount(item.CartId));
         }
 
-        public async Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int cartId)
+        public async Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int userId)
         {
-            if (cartId <= 0)
-                throw new ArgumentOutOfRangeException("Cart Id must be a positive integer.");
+            var cart = await _cartService.GetCurrentCartByUserIdAsync(userId);
+            
+            if (cart == null)
+                throw new KeyNotFoundException($"No active cart found for user with Id {userId}.");
 
-            var items = await _repo.GetItemsByCartId(cartId);
+            var items = await _repo.GetItemsByCartId(cart.Id);
 
             return _mapper.Map<IEnumerable<ItemResponseDto>>(items);    
         }
