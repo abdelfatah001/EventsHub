@@ -10,31 +10,47 @@ using Domain.Entities;
 using Moq;
 using API.DTOs.Auth.Request;
 using API.DTOs.Auth.Response;
+using API.Controllers.Auth;
+
 
 namespace EventsHub.Tests.Controllers
 {
     public class AuthControllerTests
     {
-        private static AuthController CreateController (Mock<IUserService> userService, Mock<IRefreshTokenService> tokenService)
-        {
-            var organizerService = new Mock<IOrganizerService>();
-            var verificationService = new Mock<IVerificationService>();
 
-            var jwtSettings = new JwtSettings
+        private readonly Mock<IUserService> _userService;
+        private readonly Mock<IRefreshTokenService> _tokenService;
+        
+        private readonly Mock<IOrganizerService> _organizerService;
+        private readonly Mock<IVerificationService> _verificationService;
+
+        private readonly JwtSettings _jwtSettings;
+
+        private readonly AuthController _authController;
+
+        public AuthControllerTests()
+        {
+            _userService = new Mock<IUserService>();
+            _tokenService = new Mock<IRefreshTokenService>();
+            _organizerService = new Mock<IOrganizerService>();
+            _verificationService = new Mock<IVerificationService>();
+
+            _jwtSettings = new JwtSettings
             {
                 Key = "replace-with-a-test-key-at-least-32-bytes-long",
                 Issuer = "EventsHub.Tests",
                 Audience = "EventsHub.Tests"
             };
 
-            return new AuthController(
-                userService.Object, organizerService.Object, jwtSettings,
-                tokenService.Object, verificationService.Object);
-
+            _authController = new AuthController(
+                _userService.Object, _organizerService.Object, _jwtSettings,
+                _tokenService.Object, _verificationService.Object); 
         }
 
-        private async Task<(IActionResult result, Mock<IUserService> userService, Mock<IRefreshTokenService> tokenService)>
-            ExecuteLogin 
+
+       
+
+        private async Task<IActionResult> ExecuteLogin 
             (string submittedEmail, string submittedPassword, bool IsUserExisted = true)
         {
             const string password = "correct_password";
@@ -50,19 +66,16 @@ namespace EventsHub.Tests.Controllers
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword(password)
                 } : null;
 
-            var userService = new Mock<IUserService>();
 
-            userService
+            _userService
                 .Setup(service => service.GetByEmailAsync(submittedEmail))
                 .ReturnsAsync(user);
 
-            var tokenService = new Mock<IRefreshTokenService>();
 
-            tokenService
+            _tokenService
                 .Setup(s => s.AddAsync(It.IsAny<RefreshToken>()))
                 .ReturnsAsync(1);
 
-            var controller = CreateController(userService, tokenService);
 
             var request = new LoginRequest
             {
@@ -70,9 +83,9 @@ namespace EventsHub.Tests.Controllers
                 Password = submittedPassword,
             };
 
-            var result = await controller.Login(request);
+            var result = await _authController.Login(request);
 
-            return (result, userService, tokenService);
+            return (result);
 
         }
 
@@ -87,10 +100,10 @@ namespace EventsHub.Tests.Controllers
             var result = await ExecuteLogin(email, password, false);
 
             // Assert 
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
             // It ensures that the Login endpoint called GetByEmailAsync(email) exactly once during this test.
-            result.userService.Verify(
+            _userService.Verify(
                 s => s.GetByEmailAsync(email),
                 Times.Once());
         }
@@ -106,9 +119,9 @@ namespace EventsHub.Tests.Controllers
             var result = await ExecuteLogin(email, wrongPassword);
 
             // Assert 
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
-            result.userService.Verify(
+            _userService.Verify(
                 s => s.GetByEmailAsync(email),
                 Times.Once());  
 
@@ -127,25 +140,25 @@ namespace EventsHub.Tests.Controllers
             // Assert
 
             // the result should be of type OkObjectResult, and the value of that result should be of type TokenResponse.
-            var okResult = Assert.IsType<OkObjectResult>(result.result);
+            var okResult = Assert.IsType<OkObjectResult>(result);
             var tokenResponse = Assert.IsType<TokenResponse>(okResult.Value);
 
             // the AccessToken and RefreshToken properties of the TokenResponse object should not be null or empty.
             Assert.False(string.IsNullOrEmpty(tokenResponse.AccessToken));
             Assert.False(string.IsNullOrEmpty(tokenResponse.RefreshToken));
 
-            result.userService.Verify(
+            _userService.Verify(
                 s => s.GetByEmailAsync(email),
                 Times.Once);
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Once);
 
         }
 
 
-        private async Task<(IActionResult result, Mock<IRefreshTokenService> tokenService)> ExecuteRefresh (
+        private async Task<IActionResult> ExecuteRefresh(
             DateTime expiresAt, DateTime? revokedAt, string submittedToken,
             bool IsUserExisted = true, bool IsTokenExisted = true)
         {
@@ -167,17 +180,14 @@ namespace EventsHub.Tests.Controllers
                     RevokedAt = revokedAt
                 } : null;
 
-            var userService = new Mock<IUserService>();
-            userService
+            _userService
                 .Setup(s => s.GetByEmailAsync(email))
                 .ReturnsAsync(user);
 
-            var tokenService = new Mock<IRefreshTokenService>();
-            tokenService
+            _tokenService
                 .Setup(s => s.GetActiveTokenByUserIdAsync(1))
                 .ReturnsAsync(storedToken);
 
-            var controller = CreateController(userService, tokenService);
 
             var request = new RefreshTokenRequest
             { 
@@ -185,8 +195,8 @@ namespace EventsHub.Tests.Controllers
                 RefreshToken = submittedToken
             };
 
-            var result = await controller.Refresh(request);
-            return (result, tokenService);
+            var result = await _authController.Refresh(request);
+            return (result);
         }
 
         [Fact]
@@ -203,14 +213,14 @@ namespace EventsHub.Tests.Controllers
                 submittedToken);
 
             // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
             // cuz is invalid token ensure the code didn't reach to these actions
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Never()); 
 
@@ -226,13 +236,13 @@ namespace EventsHub.Tests.Controllers
                 "correct-refresh-token");
 
             // Assert
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
         }
@@ -245,14 +255,14 @@ namespace EventsHub.Tests.Controllers
                 DateTime.UtcNow.AddDays(-1),
                 "correct-refresh-token");
 
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()), 
                 Times.Never());
 
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
         }
@@ -265,14 +275,14 @@ namespace EventsHub.Tests.Controllers
                 null,
                 "correct-refresh-token");
 
-            Assert.IsType<OkObjectResult>(result.result);
+            Assert.IsType<OkObjectResult>(result);
 
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()),
                 Times.Once());
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Once());
         }
@@ -286,12 +296,12 @@ namespace EventsHub.Tests.Controllers
                 "correct-refresh-token",
                 false);
 
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
         }
@@ -306,12 +316,12 @@ namespace EventsHub.Tests.Controllers
                 true, 
                 false);
 
-            Assert.IsType<UnauthorizedObjectResult>(result.result);
+            Assert.IsType<UnauthorizedObjectResult>(result);
 
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.RevokeAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
-            result.tokenService.Verify(
+            _tokenService.Verify(
                 s => s.AddAsync(It.IsAny<RefreshToken>()),
                 Times.Never());
         }

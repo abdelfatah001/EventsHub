@@ -10,12 +10,14 @@ namespace Domain.Interfaces
         Task<IEnumerable<TicketType>> GetAllByOccurenceIdAsync (int occurenceId);
 
         Task<TicketType?> GetByIdAsync(int ticketTypeId);
-        Task<double> GetPriceAsync(int ticketTypeId);
+        Task<decimal> GetPriceAsync(int ticketTypeId);
 
         Task<bool> UpdateAsync(TicketType ticketType);
 
         Task<bool> IsThereAvaliableTicketsAsync(int ticketTypeId, int Quantity);
-        Task<bool> TryReserveAsync(int ticketTypeId, int quantity);
+
+        // check is there are enough tickets available and reserve them if possible, return the price of unit of the ticket reserved
+        Task<decimal?> TryReserveAsync(int ticketTypeId, int quantity);
 
 
 

@@ -62,14 +62,20 @@ namespace Application.Orders
 
                 foreach (var cartItem in cart.CartItems)
                 {
-                    // Reserve inventory atomically
-                    var reserved = await _ticketTypeRepository
+                    // Reserve inventory automically
+                    var ticketPrice = await _ticketTypeRepository
                         .TryReserveAsync(
                             cartItem.TicketTypeId,
                             cartItem.Quantity);
 
-                    if (!reserved)
+                    if (ticketPrice == null)
+                    {
+                        order.Status = enOrderStatus.TicketsNotFound;
+                        _orderRepository.Update(order);
+
                         throw new NotEnoughTicketException("Not enough tickets available.");
+                    }
+
 
                     var orderItem = new OrderItem
                     {
@@ -78,7 +84,7 @@ namespace Application.Orders
 
                         // TODO : later we can improve this
                         // Price can be changed
-                        UnitPrice = await _ticketTypeRepository.GetPriceAsync(cartItem.TicketTypeId), 
+                        UnitPrice = ticketPrice.Value
                     };
 
                     order.OrderItems.Add(orderItem);
@@ -88,7 +94,7 @@ namespace Application.Orders
 
                 }
 
-                await _cartService.MarkCartAsOrdered(cart.Id);
+                await _cartService.MarkCartAsOrdered(userId);
 
                 await _unitOfWork.SaveChangesAsync();
 

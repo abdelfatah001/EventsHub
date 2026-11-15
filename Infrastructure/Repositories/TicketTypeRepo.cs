@@ -67,10 +67,20 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<bool> TryReserveAsync(int ticketTypeId, int quantity)
+        public async Task<decimal?> TryReserveAsync(int ticketTypeId, int quantity)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
+
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+
+            var ticket = await _context.TicketTypes
+                .Where(t => t.Id == ticketTypeId && t.AvailableQuantity >= quantity)
+                .Select(t => new { t.Price })
+                .FirstOrDefaultAsync();
+
+            if (ticket is null)
+                return null;
 
             var affectedRows = await _context.TicketTypes
                 .Where(t => t.Id == ticketTypeId && t.AvailableQuantity >= quantity)
@@ -78,12 +88,17 @@ namespace Infrastructure.Repositories
                     setters.SetProperty(
                         t => t.AvailableQuantity,
                         t => t.AvailableQuantity - quantity));
+            
+            if (affectedRows == 0)
+                return null;
 
-            return affectedRows > 0;
+            await transaction.CommitAsync();
+
+            return ticket.Price;
 
         }
 
-        public async Task<double> GetPriceAsync(int ticketTypeId)
+        public async Task<decimal> GetPriceAsync(int ticketTypeId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(ticketTypeId);
 

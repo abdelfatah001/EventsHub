@@ -50,5 +50,5 @@ namespace Application.Payments.Paymob
                 throw new InvalidOperationException("Paymob returned an empty intention response.");
         }
 
-        }
+    }
     }

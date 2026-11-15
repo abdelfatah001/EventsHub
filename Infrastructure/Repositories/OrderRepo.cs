@@ -23,7 +23,7 @@ namespace Infrastructure.Repositories
             return order;
         }
 
-        public async Task<IEnumerable<Order>?> GetAllByUserIdAsync(int userId)
+        public async Task<IEnumerable<Order>?> GetOrderByUserIdAsync(int userId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(userId);
 
@@ -50,6 +50,13 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .Include(x => x.OrderItems)
                 .FirstOrDefaultAsync(c => c.Id == orderId);
+        }
+
+        public void Update(Order order)
+        {
+            ArgumentNullException.ThrowIfNull(order, nameof(order));
+
+            _context.Orders.Update(order);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Infrastructure.Repositories
             return item;
         }
 
-        public async Task<OrderItem?> GetById(int itemId)
+        public async Task<OrderItem?> GetByIdAsync(int itemId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(itemId);
 
@@ -33,7 +33,7 @@ namespace Infrastructure.Repositories
                 .FirstOrDefaultAsync(c => c.Id == itemId);
         }
 
-        public async Task<IEnumerable<OrderItem>> GetByOrderId(int orderId)
+        public async Task<IEnumerable<OrderItem>> GetByOrderIdAsync(int orderId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(orderId);
 

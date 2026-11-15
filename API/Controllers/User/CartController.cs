@@ -28,7 +28,7 @@ namespace API.Controllers.UserControllers
             if (GetAuthenticatedUserId() is not int userId)
                 return Unauthorized(new { message = "User ID not found in token." });
 
-            var cartId = await _cartService.CreateCart(userId);
+            var cartId = await _cartService.CreateCartAsync(userId);
 
             return Ok(cartId);
         }
@@ -100,7 +100,7 @@ namespace API.Controllers.UserControllers
             if (GetAuthenticatedUserId() is not int userId)
                 return Unauthorized(new { message = "User ID not found in token." });
 
-            await _cartItemService.DeleteItem(userId, itemId);
+            await _cartItemService.DeleteAsync(userId, itemId);
 
             return Ok();
         }

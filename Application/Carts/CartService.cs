@@ -14,7 +14,7 @@ namespace Application.Carts
             _repo = repo;
         }
 
-        public async Task<int> CreateCart(int userId)
+        public async Task<int> CreateCartAsync(int userId)
         {
             if (userId <= 0)
                 throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
@@ -48,6 +48,9 @@ namespace Application.Carts
 
         public async Task MarkCartAsOrdered(int userId)
         {
+            if (userId <= 0)
+                throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
+
             var cart = await GetCurrentCartByUserIdAsync(userId);
 
             if (cart == null)

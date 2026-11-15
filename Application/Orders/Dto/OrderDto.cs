@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.OrderItems
+namespace Application.Orders.Dto
 {
-    public class OrderItemService
+    internal class OrderDto
     {
     }
 }

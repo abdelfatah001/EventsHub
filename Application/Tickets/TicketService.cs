@@ -37,7 +37,7 @@ namespace Application.Tickets
 
             for (int i = 0; i < Amount; i++)
             {
-                var ticket = await _ticketGenerator.GenerateTicket(ticketTypeId, orderItemId);
+                var ticket = await _ticketGenerator.GenerateTicket(ticketTypeId, orderItemId, i+1);
 
                 tickets.Add(ticket);
             }

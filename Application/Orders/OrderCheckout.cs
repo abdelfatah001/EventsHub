@@ -2,6 +2,7 @@
 using Application.Orders.Dto;
 using Application.Payments;
 using Domain.Contracts;
+using Domain.Entities;
 
 namespace Application.Orders
 {
@@ -21,9 +22,9 @@ namespace Application.Orders
         /// initiating the payment intent, and returning the order summary and payment
         /// details required to complete the payment.
         /// </summary>
-        public async Task<CheckoutResult> CheckoutOrderAsync(int userId)
+        public async Task<CheckoutResult> CheckoutOrderAsync(User user)
         {
-            var order = await _orderService.CreateOrderAsync(userId);
+            var order = await _orderService.CreateOrderAsync(user.Id);
 
 
             var paymentRequest = new PaymentRequest
@@ -31,9 +32,9 @@ namespace Application.Orders
                 Amount = order.TotalAmount,
                 Currency = "EGP",
                 OrderId = order.Id,
-                CustomerName = "", // Replace with actual customer name
-                CustomerEmail = "", // Replace with actual customer email
-                CustomerPhone = "" // Replace with actual customer phone
+                CustomerName = user.FirstName + " " + user.LastName, 
+                CustomerEmail = user.Email,
+                CustomerPhone = user.Phone 
             };
 
             var paymentResult = await _paymobIntentService.CreatePaymentIntentAsync(paymentRequest);

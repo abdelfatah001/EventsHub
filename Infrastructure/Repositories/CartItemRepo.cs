@@ -44,7 +44,7 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<CartItem?> GetById(int cartItemId)
+        public async Task<CartItem?> GetByIdAsync(int cartItemId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartItemId);
 
@@ -54,20 +54,19 @@ namespace Infrastructure.Repositories
                 .FirstOrDefaultAsync(c => c.Id == cartItemId);
         }
 
-        public async Task<int> IsCartItemRepeated(int cartId, int TicketTypeId)
+        public async Task<CartItem?> IsCartItemRepeated(int cartId, int TicketTypeId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartId);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(TicketTypeId);
 
             return await _context.CartItems
                 .Where(x => 
-                x.CartId == cartId &&
-                x.TicketTypeId == TicketTypeId &&
-                x.Cart.Status == enCartStatus.Active) // it makes inner join with cart
-                .Select(x => x.Id)
+                    x.CartId == cartId &&
+                    x.TicketTypeId == TicketTypeId &&
+                    x.Cart.Status == enCartStatus.Active) // it makes inner join with cart
                 .FirstOrDefaultAsync();
 
-            // if no existed 0 will returned
+            // if no existed null will returned
 
         }
 
@@ -80,7 +79,7 @@ namespace Infrastructure.Repositories
             return await _context.SaveChangesAsync() > 0;
 
         }
-        public async Task<decimal> CalculateCartTotalAmount(int cartId)
+        public async Task<decimal> CalculateCartTotalPrice(int cartId)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(cartId);
 

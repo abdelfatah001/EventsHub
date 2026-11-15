@@ -15,26 +15,28 @@ namespace Application.Tickets
             _ticketRepo = ticketRepo;
         }
 
-        public async Task<Ticket> GenerateTicket(int ticketTypeId, int orderItemId)
+        public async Task<Ticket> GenerateTicket(int ticketTypeId, int orderItemId, int order)
         {
+
+            var fixedCode = await GenerateTicketCode(ticketTypeId);
             return new Ticket
             {
                 OrderItemId = orderItemId,
                 TicketTypeId = ticketTypeId,
-                TicketCode = await GenerateTicketCode(),
+                TicketCode = fixedCode + " - " + order.ToString(),
                 Status = enTicketStatus.Sold,
                 IssuedAt = DateTime.Now
             };
         }
 
-        private async Task<string> GenerateTicketCode()
+        private async Task<string> GenerateTicketCode(int ticketTypeId)
         {
             string ticketCode = "";
 
             while (true)
             {
                 ticketCode = 
-                    $"TKT-{RandomNumberGenerator.GetHexString(8)}";
+                    $"TKT- {ticketTypeId} - {DateTime.Today}";
 
                 if (await _ticketRepo.IsCodeUniqueAsync(ticketCode))
                     return ticketCode;

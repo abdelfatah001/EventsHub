@@ -12,7 +12,8 @@ namespace Domain.Entities
         public int OrderItemId { get; set; }
         public OrderItem? OrderItem { get; set; }
 
-
+        // how many persons its include
+        public int Value { get; set; }
         public int TicketTypeId { get; set; }
         public TicketType TicketType { get; set; } = null!;
         

@@ -4,6 +4,6 @@ namespace Application.Tickets
 {
     public interface ITicketGenerator
     {
-        Task<Ticket> GenerateTicket(int ticketTypeId,int orderItemId);
+        Task<Ticket> GenerateTicket(int ticketTypeId,int orderItemId, int order);
     }
 }

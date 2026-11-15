@@ -5,6 +5,6 @@
         public int TicketTypeId { get; set; }
         public string TicketTypeName { get; set; } = null!;
         public int Quantity { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

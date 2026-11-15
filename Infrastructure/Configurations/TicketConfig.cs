@@ -19,8 +19,8 @@ namespace Infrastructure.Configurations
                    .IsRequired();
 
             builder.HasOne(t => t.OrderItem)
-                   .WithOne(oi => oi.Ticket)
-                   .HasForeignKey<Ticket>(t => t.OrderItemId)
+                   .WithMany(oi => oi.Tickets)
+                   .HasForeignKey(t => t.OrderItemId)
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(t => t.TicketType)
@@ -33,6 +33,7 @@ namespace Infrastructure.Configurations
 
             builder.HasIndex(t => t.TicketCode)
                    .IsUnique();
+
         }
     }
 }

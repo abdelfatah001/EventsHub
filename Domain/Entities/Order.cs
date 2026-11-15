@@ -13,7 +13,7 @@ namespace Domain.Entities
         public int UserId { get; set; }
         public User? User {  get; set; }
 
-        public double TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
         public enOrderStatus Status { get; set; }
 
         public DateTime CreatedAt { get; set; }

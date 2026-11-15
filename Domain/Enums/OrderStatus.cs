@@ -6,7 +6,8 @@ namespace Domain.Enums
         PendingPayment = 0,
         Paid = 1,
         Expired = 2,
-        cancelled = 3,
+        Cancelled = 3,
         PaymentFailed = 4,
+        TicketsNotFound = 5
     }
 }

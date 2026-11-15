@@ -1,34 +1,65 @@
 ﻿using Domain.Entities;
 using Domain.Enums;
 using Domain.Interfaces;
+using Infrastructure.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
     public class PaymentRepo : IPaymentRepo
     {
-        public Task<Payment> CreatePaymentAsync(Payment payment)
+        private readonly AppDbContext _context; 
+
+        public PaymentRepo(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Payment?> GetPaymentByIdAsync(int paymentId)
+        public async Task<Payment> AddPaymentAsync(Payment payment)
         {
-            throw new NotImplementedException();
+            ArgumentNullException.ThrowIfNull(payment, nameof(payment));
+
+            _context.Payments.Add(payment);
+            return await _context.SaveChangesAsync() > 0 ? payment : null;
         }
 
-        public Task<Payment?> GetPaymentByProviderReferenceAsync(string providerReference)
+        public async Task<Payment?> GetPaymentByIdAsync(int paymentId)
         {
-            throw new NotImplementedException();
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(paymentId, nameof(paymentId));
+
+            return await _context.Payments
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.Id == paymentId);
+        }
+        public async Task<Payment?> GetPaymentByProviderReferenceAsync(string providerReference)
+        {
+            ArgumentNullException.ThrowIfNull(providerReference, nameof(providerReference));
+
+            return await _context.Payments
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.ProviderReference == providerReference);
         }
 
-        public Task<IEnumerable<Payment>?> GetPaymentsByOrderIdAsync(int orderId)
+        public async Task<IEnumerable<Payment>?> GetPaymentsByOrderIdAsync(int orderId)
         {
-            throw new NotImplementedException();
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(orderId, nameof(orderId));
+            
+            return await _context.Payments
+                .AsNoTracking()
+                .Where(p => p.OrderId == orderId)
+                .ToListAsync();
         }
 
-        public Task UpdatePaymentStatusAsync(int paymentId, enPaymentStatus status)
+        public async Task<bool> UpdatePaymentStatusAsync(int paymentId, enPaymentStatus status)
         {
-            throw new NotImplementedException();
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(paymentId, nameof(paymentId));
+
+            var affectedRows = await _context.Payments
+                .Where(p => p.Id == paymentId)
+                .ExecuteUpdateAsync(setters => 
+                    setters.SetProperty(p => p.Status, status));
+
+            return affectedRows > 0;
         }
     }
 }

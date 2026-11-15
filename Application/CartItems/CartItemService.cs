@@ -26,10 +26,46 @@ namespace Application.CartItems
             _mapper = mapper;
         }
 
+        public async Task UpdateItemQuantityAsync(int userId, int itemId, int newQuantity)
+        {
+            if (itemId <= 0)
+                throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
+
+            if (userId <= 0)
+                throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
+
+            if (newQuantity < 0)
+                throw new ArgumentOutOfRangeException("New quantity must be a non-negative integer.");
+
+            var item = await OwnershipCheckAsync(userId, itemId);
+            
+            var additionalQuantity = newQuantity - item.Quantity;
+
+            if (newQuantity == item.Quantity)
+                return;
+
+            else if (newQuantity > 0 && ! await _ticketTypeRepo.IsThereAvaliableTicketsAsync(item.TicketTypeId, additionalQuantity))
+                throw new NotEnoughTicketException("Not enough tickets available.");
+
+            else if (newQuantity == 0)
+                await _repo.DeleteAsync(item);
+
+            else 
+            {
+                // update the quantity of the item
+                item.Quantity = newQuantity;
+                await _repo.UpdateAsync(item);
+            }
+                
+            
+            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalPrice(item.CartId));
+
+        } 
+        
         public async Task AddAsync (int userId, AddCartItemDto newItem)
         {
             if (userId <= 0)
-                throw new ArgumentOutOfRangeException(nameof(userId));
+                throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
 
             if (newItem is null)
                 throw new ArgumentNullException("Cart item payload can't be null.");
@@ -37,33 +73,42 @@ namespace Application.CartItems
             if (!await _ticketTypeRepo.IsThereAvaliableTicketsAsync(newItem.TicketTypeId, newItem.Quantity))
                 throw new NotEnoughTicketException("Not enough tickets available.");
 
-            var cartId = await _cartService.CreateCart(userId);
+            var cartId = await _cartService.CreateCartAsync(userId);
 
             // if item existed return its Id if not return 0
-            var itemId = await _repo.IsCartItemRepeated(cartId, newItem.TicketTypeId);
+            var item = await _repo.IsCartItemRepeated(cartId, newItem.TicketTypeId);
 
-            if (itemId == 0)
+            if (item == null)
             {
                 var cartItem = new CartItem
                 {
-                    CartId = await _cartService.CreateCart(userId),
+                    CartId = cartId,
                     TicketTypeId = newItem.TicketTypeId,
                     Quantity = newItem.Quantity
                 };
 
-                await _repo.AddAsync(cartItem);
+                await _repo.AddAsync(cartItem);    
             }
 
             else
             {
-                await UpdateItemQuantityAsync(cartId, itemId, newItem.Quantity);
+                item.Quantity += newItem.Quantity;
+                await _repo.UpdateAsync(item);
             }
+            
+            await _cartRepo.UpdateTotalAmount(cartId, await _repo.CalculateCartTotalPrice(cartId));
 
         }
 
-        private async Task<CartItem> GetCartItem (int userId, int itemId)
+        public async Task<CartItem> OwnershipCheckAsync (int userId, int itemId)
         {
-            var item = await _repo.GetById(itemId);
+            if (userId <= 0)
+                throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
+
+            if (itemId <= 0)
+                throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
+
+            var item = await _repo.GetByIdAsync(itemId);
 
             if (item == null)
                 throw new KeyNotFoundException($"Cart item with Id {itemId} is not existed.");
@@ -77,35 +122,19 @@ namespace Application.CartItems
             return item;
         }
 
-        public async Task UpdateItemQuantityAsync(int userId, int itemId, int newQuantity)
+        public async Task DeleteAsync(int userId, int itemId)
         {
             if (itemId <= 0)
                 throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
 
-            if (newQuantity <= 0)
-                throw new ArgumentOutOfRangeException("New quantity must be a positive integer.");
+            if (userId <= 0)
+                throw new ArgumentOutOfRangeException("User Id must be a positive integer.");
 
-            var item = await GetCartItem(userId, itemId);
-
-            item.Quantity = newQuantity;
-
-            await _repo.UpdateAsync(item);
-
-            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalAmount(item.CartId));
-
-
-        } 
-        
-        public async Task DeleteItem(int userId, int itemId)
-        {
-            if (itemId <= 0)
-                throw new ArgumentOutOfRangeException("Item Id must be a positive integer.");
-
-            var item = await GetCartItem(userId, itemId);
+            var item = await OwnershipCheckAsync(userId, itemId);
 
             await _repo.DeleteAsync(item);
 
-            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalAmount(item.CartId));
+            await _cartRepo.UpdateTotalAmount(item.CartId, await _repo.CalculateCartTotalPrice(item.CartId));
         }
 
         public async Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int userId)

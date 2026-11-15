@@ -9,13 +9,13 @@ namespace Domain.Entities
         public int OrderId { get; set; }
         public Order? Order { get; set; }
 
-        public int TicketId { get; set; }
-        public Ticket? Ticket { get; set; }
+        public ICollection<int> TicketIds { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
 
         public int TicketTypeId { get; set; }
 
         public int Quantity { get; set; }
-        public double UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
 
     }
 }

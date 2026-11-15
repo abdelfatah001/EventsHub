@@ -39,7 +39,7 @@ namespace Application.Payments
                 CreatedAt = DateTime.UtcNow
             };
             
-            await _paymentRepo.CreatePaymentAsync(payment);
+            await _paymentRepo.AddPaymentAsync(payment);
 
             await _unitOfWork.SaveChangesAsync();
 

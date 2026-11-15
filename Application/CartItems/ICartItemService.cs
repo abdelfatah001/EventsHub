@@ -10,6 +10,6 @@ namespace Application.CartItems
         Task<IEnumerable<ItemResponseDto>> GetCartItemsByCartIdAsync(int userId);
         Task UpdateItemQuantityAsync(int cartId, int itemId, int newQuantity);
 
-        Task DeleteItem (int itemId, int cartId);
+        Task DeleteAsync (int itemId, int cartId);
     }
 }
