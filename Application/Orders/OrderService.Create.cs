@@ -1,11 +1,11 @@
-﻿using Application.OrderItems.Dto.Request;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Interfaces;
 using Domain.Enums;
 using Domain.Exceptions;
 using Application.Carts;
 using Domain.Interfaces.PaymentService;
 using Domain.Contracts;
+using AutoMapper;
 
 
 namespace Application.Orders
@@ -17,17 +17,19 @@ namespace Application.Orders
         private readonly ITicketTypeRepo _ticketTypeRepository;
         private readonly ICartService _cartService;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         public OrderService(
             IOrderRepo orderRepository, IOrderItemRepo orderItemRepository,
             ITicketTypeRepo ticketTypeRepository,
-            ICartService cartService, IUnitOfWork unitOfWork)
+            ICartService cartService, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _orderRepository = orderRepository;
             _orderItemRepository = orderItemRepository;
             _ticketTypeRepository = ticketTypeRepository;
             _cartService = cartService;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         /// <summary>
         /// Creates an order from the user's active cart by reserving the requested
@@ -69,21 +71,13 @@ namespace Application.Orders
                             cartItem.Quantity);
 
                     if (ticketPrice == null)
-                    {
-                        order.Status = enOrderStatus.TicketsNotFound;
-                        _orderRepository.Update(order);
-
                         throw new NotEnoughTicketException("Not enough tickets available.");
-                    }
 
 
                     var orderItem = new OrderItem
                     {
                         TicketTypeId = cartItem.TicketTypeId,
                         Quantity = cartItem.Quantity,
-
-                        // TODO : later we can improve this
-                        // Price can be changed
                         UnitPrice = ticketPrice.Value
                     };
 

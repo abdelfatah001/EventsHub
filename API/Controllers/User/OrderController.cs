@@ -121,7 +121,7 @@ namespace API.Controllers.UserControllers
             if (GetAuthenticatedUserId() is not int userId)
                 return Unauthorized("User is not authenticated.");
 
-            var orderItem = await _orderService.GetOrderItemByIdAsync(orderItemId);
+            var orderItem = await _orderService.GetItemByIdAsync(orderItemId);
 
             if (orderItem is null)
                 return NotFound("Order item not found.");
@@ -141,7 +141,7 @@ namespace API.Controllers.UserControllers
             if (orderItemId <= 0)
                 return BadRequest("Invalid order item ID.");
 
-            var orderItem = await _orderService.GetOrderItemByIdAsync(orderItemId);
+            var orderItem = await _orderService.GetItemByIdAsync(orderItemId);
 
             if (orderItem is null)
                 return NotFound("Order item not found.");

@@ -20,7 +20,7 @@ namespace Domain.Entities
         public DateTime ExpiresAt { get; set; }
 
 
-        public ICollection<OrderItem> OrderItems { get; set; } = null!;
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         public ICollection<Payment> Payments { get; set; } = null!;
     }
 }

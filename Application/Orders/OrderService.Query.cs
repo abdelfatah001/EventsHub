@@ -43,10 +43,10 @@ namespace Application.Orders
 
             var order = await _orderRepository.GetDetailedOrderByIdAsync(orderId);
 
-            return _mapper.Map<OrderSummary>(order);    
+            return _mapper.Map<OrderSummary>(order);
         }
 
-        public async Task<ItemDto> GetOrderItemByIdAsync(int orderItemId)
+        public async Task<ItemDto> GetItemByIdAsync(int orderItemId)
         {
             if (orderItemId <= 0)
                 throw new ArgumentOutOfRangeException(nameof(orderItemId), orderItemId, "Order item id must be a positive integer.");
@@ -83,4 +83,16 @@ namespace Application.Orders
             return order.UserId == userId;
 
         }
+         public async Task<Order> GetOrderWithItemsByIdAsync(int orderId)
+        {
+
+            if (orderId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(orderId), orderId, "Order id must be a positive integer.");
+
+
+            return await _orderRepository.GetDetailedOrderByIdAsync(orderId);
+
+        }
+
+    }
 }

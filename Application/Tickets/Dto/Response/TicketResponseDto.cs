@@ -13,7 +13,7 @@ namespace Application.Tickets.Dto.Response
         public string TicketTypeName { get; set; } = null!;
         public DateTime IssuedAt { get; set; }
 
-        public double Price { get; set; }
+        public decimal Price { get; set; }
 
     }
 }
